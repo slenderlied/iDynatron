@@ -7,11 +7,11 @@ $dt = new DateTime("now", new DateTimeZone('America/Santiago'));
 
 $bulk = new MongoDB\Driver\BulkWrite;
 $txtFoto=(($_FILES['txtFoto']["name"]));
-$nombre = $_POST["nombre"];
-$apellido = $_POST["apellido"];
-$correo = $_POST["correo"];
-$contra = $_POST["contra"];
-$org = $_POST["orga"];
+$nombre = $_POST["txtNombre"];
+$apellido = $_POST["txtApellido"];
+$correo = $_POST["txtCorreo"];
+$contra = $_POST["txtContra"];
+$org = $_POST["txtOrganizacion"];
 $fecha = Date("d-m-Y");
 $tiempo = Date("H:i:s");
 
@@ -61,6 +61,7 @@ $user = [
 'organizacion' => $org,
 'foto' => $nombreArchivo,
 'tipoUsuario' => "Standard",
+'estado' => "2",
 'fecha' => $fecha,
 'tiempo' => $tiempo
 ];
