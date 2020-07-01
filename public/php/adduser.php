@@ -1,5 +1,6 @@
 <?php
-
+//Incluye el archivo mongodb.php de la carpeta database.
+//mongodb.php trae la conexión 
 include ("../database/mongodb.php");
 date_default_timezone_set("America/Santiago");
 $dt = new DateTime("now", new DateTimeZone('America/Santiago'));
@@ -50,6 +51,7 @@ if($txtFoto!=""){
     }
 
 }
+
 
 $user = [
 
