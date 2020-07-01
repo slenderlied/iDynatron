@@ -67,7 +67,7 @@
 							¿Aún no tienes cuenta?
 						</span>
 
-						<a class="txt2" href="#">
+						<a class="txt2" href="/register">
 							Regístrate
 						</a>
 					</div>
