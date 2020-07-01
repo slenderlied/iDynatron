@@ -67,7 +67,7 @@ if(isset($_SESSION['correo'])){
             </tr>
           </table>
           <br>
-          <a href="login"> Cerrar Sesión</a>
+          <a href="/php/logout.php"> Cerrar Sesión</a>
         
           
 <?php
