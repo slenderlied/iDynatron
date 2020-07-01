@@ -78,7 +78,7 @@
 						<h1 class="mb-4"><i>CREAMOS <br>NUEVAS FRONTERAS</i></h1>
 						<p class="mb-4">Incentivar el uso de las nuevas tecnologías (cloud) en las pequeñas y medianas
 							empresas, dando servicios completos de asesoría.</p>
-						<p class="mt-5"><a href="/login" class="btn-custom">Incorpórate <span
+						<p class="mt-5"><a href="#" class="btn-custom">Incorpórate <span
 									class="ion-ios-arrow-round-forward"></span></a></p>
 					</div>
 				</div>
