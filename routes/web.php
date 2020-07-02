@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('login', function () {
-    return view('login');
+        return view('login');
 });
 
 Route::get('register', function () {
@@ -31,6 +31,10 @@ Route::get('menu', function () {
 
 Route::get('perfilusuario', function () {
     return view('perfilusuario');
+});
+
+Route::get('modificarusuario', function () {
+    return view('modificarusuario');
 });
 
 Route::get('servidores', function () {

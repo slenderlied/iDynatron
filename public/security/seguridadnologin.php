@@ -1,9 +1,9 @@
 <?php
-
-include ("../database/mongodb.php");
+session_start();
 if(!isset($_SESSION['correo'])){
 
-      header("Location: /index");
+      return redirect()->to('login')->send();
+    
     
 }
 

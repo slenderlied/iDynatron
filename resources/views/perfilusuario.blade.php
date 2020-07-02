@@ -1,7 +1,7 @@
 <?php
 
 include ("database/mongodb.php");
-session_start();
+include ("security/seguridadnologin.php");
 
 $correo=$_SESSION['correo'];
 
@@ -119,37 +119,32 @@ echo ":c";
 
 <body>
 
+	<section class="testimony-section" id="testimonial">
+    <div class="container">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<div class="row justify-content-center mb-5 pb-3" >
+				<div class="col-md-4 heading-section ftco-animate">
+				<div class="item">
+							<div class="testimony-wrap p-4 pb-5 text-center">
+								<div class="user-img mb-4 text-center" style="background-image: url(images/files/<?php echo $row -> foto ?>); display: block; margin:auto;">
+								</div>
+								<span class="position text-center" style="font-size: 15px;"><?php echo $row -> correo ?></span>
+								<div class="text text-center">
+								<div class="pl-auto">
+								<p class="mb-3 pl-2 line name" style="font-size: 18px"><?php echo $row -> nombre ?> <?php echo $row -> apellido ?></p>
+					            <h2 class="mb-3 text-center"><?php echo $row -> organizacion ?></h2>
+								<h2 class="mb-3 text-center"><?php echo $row -> tipoUsuario ?></h2>		
+								<div class="form-group mb-2">
+							<input type="submit" value="Modificar" class="btn btn-primary py-10 px-2"> <input type="submit" value="Dashboard" class="btn btn-primary py-10 px-2">
+						</div>
+									</div>
+								</div>
+							</div>		
+				</div>
+			</div>
+	
+	</div>
+    </section>
 
 
 	<!-- Start Footer Section -->
@@ -202,3 +197,5 @@ echo ":c";
 </body>
 
 </html>
+
+

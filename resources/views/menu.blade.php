@@ -1,8 +1,7 @@
 <?php
 
 include ("database/mongodb.php");
-session_start();
-
+include ("security/seguridadnologin.php");
 $correo=$_SESSION['correo'];
 
 
