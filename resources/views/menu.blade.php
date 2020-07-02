@@ -76,7 +76,8 @@ if(isset($_SESSION['correo'])){
 
 }else{
 
-echo ":c";
+	header("Location: /login");
+
 
 }
 ?><br>

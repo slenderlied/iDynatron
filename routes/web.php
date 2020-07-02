@@ -28,3 +28,19 @@ Route::get('register', function () {
 Route::get('menu', function () {
     return view('menu');
 });
+
+Route::get('perfilusuario', function () {
+    return view('perfilusuario');
+});
+
+Route::get('servidores', function () {
+    return view('servidores');
+});
+
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('resultados', function () {
+    return view('resultados');
+});
