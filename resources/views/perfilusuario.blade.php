@@ -16,72 +16,13 @@ $filter = [
 $cursor = $manager->executeQuery($dbname, $query);
 
 
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<?php
-
-if(isset($_SESSION['correo'])){
-
         foreach($cursor as $row){
         
-          ?>
-          <table style="width:100%">
-            
-            <tr>
-              <th>Usuario</th>
-              <td><img class="img-thumbnail" width="100px" src="images/files/<?php echo $row -> foto ?>"> </td>
-              <th></th>
-              
-            </tr>
-            <tr>
-              <td>Nombre: </td>
-              <td><?php echo $row -> nombre ?></td>
-            </tr>
-            <tr>
-              <td>Apellido</td>
-              <td><?php echo $row -> apellido ?></td>
-            </tr>
-            <tr>
-              <td>Correo</td>
-              <td><?php echo $row -> correo ?></td>
-            </tr>
-            <tr>
-              <td>Contraseña</td>
-              <td><?php echo $row -> contrasena ?></td>
-            </tr>
-            <tr>
-              <td>Organización</td>
-              <td><?php echo $row -> organizacion ?></td>
-            </tr>
-            <tr>
-              <td>Tipo Usuario</td>
-              <td><?php echo $row -> tipoUsuario ?></td>
-            </tr>
-          </table>
-          <br>
-          <a href="/php/logout.php"> Cerrar Sesión</a>
-        
-          
-          <?php
-}
+    
 
-}else{
 
-echo ":c";
-
-}
 ?>
         
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,7 +33,8 @@ echo ":c";
 
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -114,10 +56,50 @@ echo ":c";
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 
+    <link rel="stylesheet" href="css/estilos.css">
+
 	<script src="https://kit.fontawesome.com/5ef377022b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+
+<div class="header">
+    <div class="top-header">
+      <div class="contenedor">
+         <div class="top-menu">
+           <ul>
+             <li><a href="/menu">INICIO</a></li>
+             <li><a href="#">ACERCA DE</a></li>
+             <li><a href="#">CONTACTO</a></li>
+             <li><a style="text-transform: uppercase">HOLA: <?php echo $row -> nombre?> <?php echo $row -> apellido?></a></li>
+           </ul>
+         </div>
+        <div class="top-redes">
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">twitter</a></li>
+            <li><a href="#">facebook</a></li>
+			<li><a href="../php/logout.php">Cerrar Sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+	<div class="titulo-blog ">
+        <div class="contenedor">
+          <h1><a class="text-white">iDynatron</a></h1>
+          <p class="subtitulo">Perfil Usuario</p>
+        </div>
+      </div>
+    
+      <div class="menu-principal">
+        <div class="contenedor">
+          
+        </div>
+      </div>
+        </div>
+
 
 	<section class="testimony-section" id="testimonial">
     <div class="container">
@@ -145,6 +127,13 @@ echo ":c";
 	
 	</div>
     </section>
+
+
+<?php 
+
+}
+
+?>
 
 
 	<!-- Start Footer Section -->

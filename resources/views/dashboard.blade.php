@@ -7,8 +7,8 @@
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<div class=row col-10"">
-<canvas id="myChart" width="400" height="400"></canvas>
+<div class="row col-2">
+<canvas id="myChart" width="100" height="100">
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -17,14 +17,14 @@ var myChart = new Chart(ctx, {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [15, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
                 'rgba(75, 192, 192, 0.2)',
                 'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 159, 64, 0.2)'   
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -48,6 +48,7 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+</canvas>
 </div>
 
 </body>
