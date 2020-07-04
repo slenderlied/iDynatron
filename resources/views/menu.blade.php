@@ -93,7 +93,8 @@ if(isset($_SESSION['correo'])){
 
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -115,11 +116,49 @@ if(isset($_SESSION['correo'])){
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 
+    <link rel="stylesheet" href="css/estilos.css">
+
 	<script src="https://kit.fontawesome.com/5ef377022b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
+
+<div class="header">
+    <div class="top-header">
+      <div class="contenedor">
+         <div class="top-menu">
+           <ul>
+             <li><a href="/menu">INICIO</a></li>
+             <li><a href="#">ACERCA DE</a></li>
+             <li><a href="#">CONTACTO</a></li>
+             <li><a style="text-transform: uppercase">HOLA: <?php echo $row -> nombre?> <?php echo $row -> apellido?></a></li>
+           </ul>
+         </div>
+        <div class="top-redes">
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">twitter</a></li>
+            <li><a href="#">facebook</a></li>
+			<li><a href="../php/logout.php">Cerrar Sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+	<div class="titulo-blog ">
+        <div class="contenedor">
+          <h1><a class="text-white">iDynatron</a></h1>
+          <p class="subtitulo">Perfil Usuario</p>
+        </div>
+      </div>
+    
+      <div class="menu-principal">
+        <div class="contenedor">
+          
+        </div>
+      </div>
+        </div>
 
 <br>
 	<div class="container">

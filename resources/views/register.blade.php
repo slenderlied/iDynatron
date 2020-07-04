@@ -47,7 +47,7 @@ include ("security/seguridadlogin.php");
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Formato valido: a@b.c">
-						<input class="input100" type="text" name="txtNombre">
+						<input class="input100" type="text" name="txtNombre" minlength="8" maxlength="20">
 						<span class="focus-input100" data-placeholder="Nombre"></span>
 					</div>
 
@@ -115,6 +115,7 @@ include ("security/seguridadlogin.php");
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/js/main.js"></script>
-
+<!--===============================================================================================-->
+    
 </body>
 </html>

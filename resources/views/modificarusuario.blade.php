@@ -93,9 +93,9 @@ $txtTiempo = $_GET['txtTiempo'];
 							</button>
 						</div>
 					</div>
-								<input type="hidden" name="txtId" value="<?php echo $txtId ?>">       
+								<input type="hidden" name="txtId" value="<?php echo $txtId ?>">			       
                                 <input type="hidden" name="txtContra" value="<?php echo $txtContra ?>">
-								<input type="hidden" name="txtFoto" value="<?php echo $txtFoto ?>">
+								<input type="hidden" name="txtFoto1" value="<?php echo $txtFoto ?>">
                                 <input type="hidden" name="txtTipoUsuario" value="<?php echo $txtTipoUsuario ?>">
 								<input type="hidden" name="txtFecha" value="<?php echo $txtFecha ?>">
 								<input type="hidden" name="txtTiempo" value="<?php echo $txtTiempo ?>">
