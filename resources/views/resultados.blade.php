@@ -1,5 +1,5 @@
 <?php
-include ("security/seguridadlogin.php");
+include ("security/seguridadnologin.php");
 
 ?>
 
@@ -14,6 +14,10 @@ include ("security/seguridadlogin.php");
     <title>Document</title>
 </head>
 <body>
+
+
+
+<a href="/pdf">Ver Informe PDF</a>
     
 </body>
 </html>

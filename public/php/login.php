@@ -21,6 +21,7 @@ try {
     $user2 = $row[0]->apellido;
     $_SESSION['correo']=$user;
     $_SESSION['nombre']=$user1;
+    $_SESSION['token']=md5(uniqid(mt_rand(),true));
 
   header("Location: /menu");
 

@@ -47,4 +47,14 @@ Route::get('dashboard', function () {
 
 Route::get('resultados', function () {
     return view('resultados');
+ 
 });
+
+Route::get('pdf', function () {
+    
+    $pdf = PDF::loadView('pdf');
+
+    return $pdf->stream();
+});
+
+

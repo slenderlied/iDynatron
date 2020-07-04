@@ -17,10 +17,8 @@ $cursor = $manager->executeQuery($dbname, $query);
 
 
         foreach($cursor as $row){
-        
+			
     
-
-
 ?>
         
 <!DOCTYPE html>
@@ -107,17 +105,36 @@ $cursor = $manager->executeQuery($dbname, $query);
 	<div class="row justify-content-center mb-5 pb-3" >
 				<div class="col-md-4 heading-section ftco-animate">
 				<div class="item">
+
 							<div class="testimony-wrap p-4 pb-5 text-center">
 								<div class="user-img mb-4 text-center" style="background-image: url(images/files/<?php echo $row -> foto ?>); display: block; margin:auto;">
 								</div>
 								<span class="position text-center" style="font-size: 15px;"><?php echo $row -> correo ?></span>
 								<div class="text text-center">
 								<div class="pl-auto">
-								<p class="mb-3 pl-2 line name" style="font-size: 18px"><?php echo $row -> nombre ?> <?php echo $row -> apellido ?></p>
-					            <h2 class="mb-3 text-center"><?php echo $row -> organizacion ?></h2>
-								<h2 class="mb-3 text-center"><?php echo $row -> tipoUsuario ?></h2>		
-								<div class="form-group mb-2">
-							<input type="submit" value="Modificar" class="btn btn-primary py-10 px-2"> <input type="submit" value="Dashboard" class="btn btn-primary py-10 px-2">
+								<p class="mb-4 pl-2 line name" style="font-size: 18px"><?php echo $row -> nombre ?> <?php echo $row -> apellido ?></p>
+					            <h2 class="mb-4 text-center"><?php echo $row -> organizacion ?></h2>
+								<h2 class="mb-4 text-center"><?php echo $row -> tipoUsuario ?></h2>		
+								<div class="form-group mb-5 d-inline-flex" style="">
+								<form action="/modificarusuario" method="get">
+								<input type="hidden" name="txtId" value="<?php echo $row -> _id ?>">
+                                <input type="hidden" name="txtNombre" value="<?php echo $row -> nombre ?>">
+                                <input type="hidden" name="txtApellido" value="<?php echo $row -> apellido ?>">
+                                <input type="hidden" name="txtCorreo" value="<?php echo $row -> correo ?>">
+                                <input type="hidden" name="txtContra" value="<?php echo $row -> contrasena ?>">
+                                <input type="hidden" name="txtOrganizacion" value="<?php echo $row -> organizacion ?>">
+								<input type="hidden" name="txtFoto" value="<?php echo $row -> foto ?>">
+                                <input type="hidden" name="txtTipoUsuario" value="<?php echo $row -> tipoUsuario ?>">
+								<input type="hidden" name="txtFecha" value="<?php echo $row -> fecha ?>">
+								<input type="hidden" name="txtTiempo" value="<?php echo $row -> tiempo ?>">
+                                <input type="submit" value="Modificar" name="btnModificar" class="btn btn-primary py-10 px-2" >
+                                </form>
+
+							 <input type="submit" value="Dashboard" class="btn btn-primary py-10 px-2">
+
+
+						
+                            
 						</div>
 									</div>
 								</div>
@@ -127,15 +144,12 @@ $cursor = $manager->executeQuery($dbname, $query);
 	
 	</div>
     </section>
-
-
+    
 <?php 
 
 }
 
 ?>
-
-
 	<!-- Start Footer Section -->
 	<footer class="ftco-footer py-5">
 		<div class="container text-center">
