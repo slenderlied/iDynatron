@@ -5,7 +5,6 @@ include ("security/seguridadnologin.php");
 
 $correo=$_SESSION['correo'];
 
-
 $filter = [
     'correo' => $correo
     ];
@@ -15,17 +14,15 @@ $filter = [
 
 $cursor = $manager->executeQuery($dbname, $query);
 
-
         foreach($cursor as $row){
 			
-    
 ?>
         
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>iDynatron</title>
+	<title>iDynatron | Perfil de Usuario</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -49,7 +46,6 @@ $cursor = $manager->executeQuery($dbname, $query);
 	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="css/jquery.timepicker.css">
 
-
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -60,7 +56,6 @@ $cursor = $manager->executeQuery($dbname, $query);
 </head>
 
 <body>
-
 
 <div class="header">
     <div class="top-header">

@@ -4,7 +4,7 @@ include ("security/seguridadlogin.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>iDynatron</title>
+	<title>iDynatron | Iniciar Sesión </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	

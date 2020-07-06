@@ -79,9 +79,12 @@ $user = [
 try {
     
      if($correo==$row -> correo){
-     
-        header("Location: /register");
-     
+   
+
+      $cliente = "Cliente creado";
+      $cuenta = "Cuenta ya registrada";
+      header("Location: /register?clientecreado=$cliente");
+
      }else if($correo!=$row -> correo){
 
         $bulk->insert($user);
