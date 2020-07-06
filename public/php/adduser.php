@@ -16,6 +16,13 @@ $org = $_POST["txtOrganizacion"];
 $fecha = Date("d-m-Y");
 $tiempo = Date("H:i:s");
 
+// this is the query that will get all documents
+$query = new MongoDB\Driver\Query([]);
+
+// execute query and return a cursor that can iterate over the results
+$cursor = $manager->executeQuery($dbname, $query);
+foreach($cursor as $row){}
+
 
 echo $txtFoto;
 
@@ -71,13 +78,20 @@ $user = [
 
 try {
     
-    $bulk->insert($user);
-    
-    $result = $manager->executeBulkWrite($dbname, $bulk);
-    echo "Usuario Creado";
+     if($correo==$row -> correo){
+     
+        header("Location: /register");
+     
+     }else if($correo!=$row -> correo){
 
+        $bulk->insert($user);
     
-   header("Location: /login");
+        $result = $manager->executeBulkWrite($dbname, $bulk);
+        echo "Usuario Creado";
+          
+       header("Location: /login");
+
+     }
 
 } catch (MongoDB\Driver\Exception\Exception $e) {
     die("Error Encontrado: ".$e);
