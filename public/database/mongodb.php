@@ -1,16 +1,15 @@
 <?php
     /**
-    * Testing PHP connection with MongoDB
-    * and getting documents from a database
+    * Testeando conexión PHP con MongoDB
     */
-    // making sure the extension is loaded
+    // asegurándose de que la extensión esté cargada
     if (extension_loaded("mongodb")) {
-        // catch exception and output details if it occurs
+        // Capturar cualquier error que pordría surgir
         try {
-            // conectarse con el servidor AWS 
+            // conexión con servidor AWS utilizando Driver MongoDB -> IP Servidor AWS y Puerto MongoDB 
             $manager = new MongoDB\Driver\Manager("mongodb://18.210.33.55:27017");
 
-            // utilizar la base de datos iDynatron y la colección Usuario 
+            // utilizar base de datos iDynatron y la colección Usuario 
             $dbname = "iDynatron.Usuario";
             
         } catch (MongoConnectionException $e) {

@@ -1,19 +1,30 @@
 <?php
 //Incluye el archivo mongodb.php de la carpeta database.
-//mongodb.php trae la conexión 
+//mongodb.php trae la conexión a la base de datos iDynatron con la colección Usuarios
 include ("../database/mongodb.php");
+
+//Se define la zona horaria America/Santiago
 date_default_timezone_set("America/Santiago");
+//Variable para almacenar la hora actual    
 $dt = new DateTime("now", new DateTimeZone('America/Santiago'));
 
-
+//Variable 
 $bulk = new MongoDB\Driver\BulkWrite;
+//Variable
 $txtFoto=(($_FILES['txtFoto']["name"]));
+//Variable
 $nombre = $_POST["txtNombre"];
+//Variable
 $apellido = $_POST["txtApellido"];
+//Variable
 $correo = $_POST["txtCorreo"];
+//Variable
 $contra = $_POST["txtContra"];
+//Variable
 $org = $_POST["txtOrganizacion"];
+//Variable
 $fecha = Date("d-m-Y");
+//Variable
 $tiempo = Date("H:i:s");
 
 // this is the query that will get all documents
