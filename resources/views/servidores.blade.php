@@ -57,7 +57,7 @@ include ("security/seguridadnologin.php");
       </div>
         </div>
 
-        <form action="php/addgastos.php" method="post">
+        <form action="php/addservidores.php" method="post">
         <div class="container justify-content-center">
             <h2>Servidores</h2>
             <div class="form-row">

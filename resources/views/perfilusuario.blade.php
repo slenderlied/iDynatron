@@ -125,8 +125,8 @@ $cursor = $manager->executeQuery($dbname, $query);
                                 <input type="submit" value="Modificar" name="btnModificar" class="btn btn-primary py-10 px-2" >
                                 </form>
 
-							 <input type="submit" value="Dashboard" class="btn btn-primary py-10 px-2">
-
+							 <input type="submit" value="Dashboard" name="btnDashboard" class="btn btn-primary py-10 px-2">
+                        
 
 						
                             

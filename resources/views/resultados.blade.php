@@ -1,9 +1,12 @@
 <?php
+include ("database/mongodb.php");
 include ("security/seguridadnologin.php");
 
+
+
+//return redirect()->to('menu')->send();
+
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -18,6 +21,7 @@ include ("security/seguridadnologin.php");
 
 
 <a href="/pdf">Ver Informe PDF</a>
-    
+
+
 </body>
 </html>

@@ -11,7 +11,11 @@
 
             // utilizar base de datos iDynatron y la colección Usuario 
             $dbname = "iDynatron.Usuario";
-            
+            // utilizar base de datos iDynatron y la colección Servidor 
+            $dbname1 = "iDynatron.Servidor";
+            // utilizar base de datos iDynatron y la colección Storage
+            $dbname1 = "iDynatron.Storage";
+
         } catch (MongoConnectionException $e) {
             var_dump($e);
         }

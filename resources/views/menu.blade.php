@@ -132,7 +132,7 @@ if(isset($_SESSION['correo'])){
              <li><a href="/menu">INICIO</a></li>
              <li><a href="#">ACERCA DE</a></li>
              <li><a href="#">CONTACTO</a></li>
-             <li><a style="text-transform: uppercase">HOLA: <?php echo $row -> nombre?> <?php echo $row -> apellido?></a></li>
+             <li><a href="/perfilusuario" style="text-transform: uppercase">HOLA: <?php echo $row -> nombre?> <?php echo $row -> apellido?></a></li>
            </ul>
          </div>
         <div class="top-redes">

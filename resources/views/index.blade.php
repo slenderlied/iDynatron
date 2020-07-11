@@ -234,7 +234,9 @@
 	  </div>
      
 	  <div class="form-group text-center mt-4">
+	  <form action="/cloudinformacion">
 		<input type="submit" value="Ver Más" class="btn btn-primary py-3 px-5">
+      </form>	
 	</div>
 	 
 
