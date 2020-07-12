@@ -11,6 +11,14 @@ $corestorage =  $_POST["corestorage"];
 $numerostorage =  $_POST["numerostorage"];
 $memoriastorage =  $_POST["memoriastorage"];
 
+
+
+
+
+
+
+
+
 $servidor = [
 
 '_id' => new MongoDB\BSON\ObjectID,

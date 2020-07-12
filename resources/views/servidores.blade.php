@@ -58,55 +58,70 @@ include ("security/seguridadnologin.php");
         </div>
 
         <form action="php/addservidores.php" method="post">
-        <div class="container justify-content-center">
+        <div id="listas" class="container justify-content-center">
             <h2>Servidores</h2>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="inputEmail4">Procesador</label>
-                    <input type="number" class="form-control" name="procesadorservidores">
+                    <input type="number" class="form-control" name="servidorprocesador[]">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Cores</label>
-                    <input type="number" class="form-control" name="coreservidores">
+                    <input type="number" class="form-control" name="coreservidores[]">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">N° Servidores</label>
-                    <input type="number" class="form-control" name="numeroservidores">
+                    <input type="number" class="form-control" name="numeroservidores[]">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Memoria</label>
-                    <input type="number" class="form-control" name="memoriaservidores">
+                    <input type="number" class="form-control" name="memoriaservidores[]">
                 </div>
             </div>
+            <input type="button" id="add_field" value="adicionar">
+            </div>
+
+            <div id="listas1" class="container justify-content-center">
             <h2>Storage </h2>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="inputEmail4">Procesador</label>
-                    <input type="number" class="form-control" name="procesadorstorage">
+                    <input type="number" class="form-control" name="procesadorstorage[]">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Cores</label>
-                    <input type="number" class="form-control" name="corestorage">
+                    <input type="number" class="form-control" name="corestorage[]">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">N° Servidores</label>
-                    <input type="number" class="form-control" name="numerostorage">
+                    <input type="number" class="form-control" name="numerostorage[]">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Memoria</label>
-                    <input type="number" class="form-control" name="memoriastorage">
+                    <input type="number" class="form-control" name="memoriastorage[]">
                 </div>
+                <input type="button" id="add_field1" value="adicionar">
             </div>
-
-
-        <button type="submit" class="btn btn-primary">Calcular</button>
     </div>
+    <div class="container justify-content-center col-md-2">
+    <button type="submit" class="btn btn-primary">Calcular</button>
     </form>
+    </div>  
+   
+        
 
-    <div class="contenedor">
-          
-    </div>      
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/js/servidores.js"></script>
+  <script src="js/js/servidores1.js"></script>
+
+
+
+
+
     <div class="footer mt-5">
         <p>(C) Todos los derechos Reservados</p>
       </div>
+
+
 </html>

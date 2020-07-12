@@ -168,11 +168,12 @@ if(isset($_SESSION['correo'])){
 	  </div>
      
 	  <div class="form-group text-center mt-4">
-		<input type="submit" value="Ver Más" class="btn btn-primary py-3 px-5"><input type="submit" value="Ver Más" class="btn btn-primary py-3 px-5">
+		<form action="/servidores"><input type="submit" value="Calculadora Tco" class="btn btn-primary py-3 px-5"> </form> <br>
+		 <input type="submit" value="Busqueda service Cloud" class="btn btn-primary py-3 px-5">
 	</div>
 
 
-
+ 
 	<!-- Start Contact Section -->
 	<section class="ftco-section contact-section" id="contact">
 		<div class="container">
