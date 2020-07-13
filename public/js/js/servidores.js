@@ -1,4 +1,4 @@
-var campos_max = 10;   //max de 10 campos
+var campos_max = 4;   //max de 4 campos
 
         var x = 0;
         $('#add_field').click (function(e) {
@@ -7,19 +7,19 @@ var campos_max = 10;   //max de 10 campos
                         $('#listas').append('<div class="form-row">\
                         <div class="form-group col-md-3">\
                         <label for="inputEmail4">Procesador</label>\
-                        <input type="number" class="form-control" name="servidorprocesador[]">\
+                        <input type="number" class="form-control" name="servidorprocesador[]" value="1">\
                         </div>\
                         <div class="form-group col-md-3">\
                         <label for="inputEmail4">Cores</label>\
-                        <input type="number" class="form-control" name="coreservidores[]">\
+                        <input type="number" class="form-control" name="coreservidor[]" value="1">\
                         </div>\
                         <div class="form-group col-md-3">\
                         <label for="inputEmail4">N° Servidores</label>\
-                        <input type="number" class="form-control" name="numeroservidores[]">\
+                        <input type="number" class="form-control" name="numeroservidor[]" value="1">\
                         </div>\
                         <div class="form-group col-md-3">\
                         <label for="inputEmail4">Memoria</label>\
-                        <input type="number" class="form-control" name="memoriaservidores[]">\
+                        <input type="number" class="form-control" name="memoriaservidor[]" value="1">\
                         </div>\
                         <a href="#" class="remover_campo">Remover</a>\
                         </div>');

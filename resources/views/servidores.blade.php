@@ -63,19 +63,19 @@ include ("security/seguridadnologin.php");
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="inputEmail4">Procesador</label>
-                    <input type="number" class="form-control" name="servidorprocesador[]">
+                    <input type="number" class="form-control" name="servidorprocesador[]" value="1">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Cores</label>
-                    <input type="number" class="form-control" name="coreservidores[]">
+                    <input type="number" class="form-control" name="coreservidor[]" value="1">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">N° Servidores</label>
-                    <input type="number" class="form-control" name="numeroservidores[]">
+                    <input type="number" class="form-control" name="numeroservidor[]" value="1">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Memoria</label>
-                    <input type="number" class="form-control" name="memoriaservidores[]">
+                    <input type="number" class="form-control" name="memoriaservidor[]" value="1">
                 </div>
             </div>
             <input type="button" id="add_field" value="adicionar">
@@ -86,19 +86,19 @@ include ("security/seguridadnologin.php");
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="inputEmail4">Procesador</label>
-                    <input type="number" class="form-control" name="procesadorstorage[]">
+                    <input type="number" class="form-control" name="procesadorstorage[]" value="1">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Cores</label>
-                    <input type="number" class="form-control" name="corestorage[]">
+                    <input type="number" class="form-control" name="corestorage[]" value="1">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">N° Servidores</label>
-                    <input type="number" class="form-control" name="numerostorage[]">
+                    <input type="number" class="form-control" name="numerostorage[]" value="1">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Memoria</label>
-                    <input type="number" class="form-control" name="memoriastorage[]">
+                    <input type="number" class="form-control" name="memoriastorage[]" value="1">
                 </div>
                 <input type="button" id="add_field1" value="adicionar">
             </div>

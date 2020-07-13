@@ -2,15 +2,18 @@
 
 $campo = $_POST["campo"];
 $suma=0;
-$i=0;
-foreach ($campo as $key) {
+//$i=0;
+//foreach ($campo as $key) {
 
- $suma=$suma+$key;
-$i= ++$i;
+ //$suma=$suma+$key;
+//$i= ++$i;
+//}
+
+//echo $suma;
+
+for ($i=0; $i <sizeof($campo); $i++) { 
+    echo $campo[$i];
 }
-
-echo $suma;
-
 
 if($i==1){
 

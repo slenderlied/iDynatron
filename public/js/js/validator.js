@@ -5,7 +5,7 @@ var campos_max          = 10;   //max de 10 campos
                 e.preventDefault();     //prevenir novos clicks
                 if (x < campos_max) {
                         $('#listas').append('<div>\
-                                <input type="text" name="campo[]">\
+                                <input type="number" name="campo[]">\
                                 <a href="#" class="remover_campo">Remover</a>\
                                 </div>');
                         x++;
