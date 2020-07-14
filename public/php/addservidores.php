@@ -4,6 +4,8 @@ include ("../database/mongodb.php");
 session_start();
 $usuario = $_SESSION["correo"];
 
+echo $idrandom = rand(1, 99999);
+
 $bulk = new MongoDB\Driver\BulkWrite;
 
 $servidorid = "SER00";
@@ -19,7 +21,6 @@ $procesadorstorage =  $_POST["procesadorstorage"];
 $corestorage =  $_POST["corestorage"];
 $numerostorage =  $_POST["numerostorage"];
 $memoriastorage =  $_POST["memoriastorage"];
-
 
 for ($i=0; $i <sizeof($procesadorservidor) && $i <sizeof($coreservidores) && $i <sizeof($numeroservidores) && $i <sizeof($memoriaservidores); $i++) {
     echo $usuario;
@@ -72,14 +73,11 @@ for ($i=0; $i <sizeof($procesadorstorage) && $i <sizeof($corestorage) && $i <siz
 
         try {
     
-               $bulk1->insert($storage);
-           
-              
+               $bulk1->insert($storage);              
         
        } catch (MongoDB\Driver\Exception\Exception $e) {
            die("Error Encontrado: ".$e);
        }
-
 }
 
 $result = $manager1->executeBulkWrite($dbname2, $bulk1);

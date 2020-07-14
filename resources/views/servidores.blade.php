@@ -108,6 +108,24 @@ include ("security/seguridadnologin.php");
     </form>
     </div>  
    
+    <div class="container justify-content-center">
+            <h2>Costos </h2>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="inputEmail4">Costos de electricidad (CLP)</label>
+                    <input type="number" class="form-control" name="costoelectricidad" value="131" disabled>
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputPassword4">Costos de almacenamiento</label>
+                    <input type="number" class="form-control" name="costoelectricidad" value="131" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputPassword4">Costos de personal de TI</label>
+                    <input type="number" class="form-control" name="costoelectricidad" value="131" disabled>
+                </div>
+            </div>
+    </div> 
         
 
 <!-- partial -->
