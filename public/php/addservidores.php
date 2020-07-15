@@ -4,11 +4,21 @@ include ("../database/mongodb.php");
 session_start();
 $usuario = $_SESSION["correo"];
 
-echo $idrandom = rand(1, 99999);
+echo $idrandom = rand(1, 999999);
+
+//Se define la zona horaria America/Santiago
+date_default_timezone_set("America/Santiago");
+//Variable para almacenar la hora actual    
+$dt = new DateTime("now", new DateTimeZone('America/Santiago'));
+echo "<br>";
+//Variable
+echo $fecha = Date("d-m-Y-H:i");
+
 
 $bulk = new MongoDB\Driver\BulkWrite;
 
 $servidorid = "SER00";
+$cantservidor = "1";
 $procesadorservidor = $_POST["servidorprocesador"];
 $coreservidores =  $_POST["coreservidor"];
 $numeroservidores =  $_POST["numeroservidor"];
@@ -17,6 +27,7 @@ $memoriaservidores =  $_POST["memoriaservidor"];
 $bulk1 = new MongoDB\Driver\BulkWrite;
 
 $storageid = "STR00";
+$cantstorage = "1";
 $procesadorstorage =  $_POST["procesadorstorage"];
 $corestorage =  $_POST["corestorage"];
 $numerostorage =  $_POST["numerostorage"];
@@ -33,10 +44,14 @@ for ($i=0; $i <sizeof($procesadorservidor) && $i <sizeof($coreservidores) && $i 
     echo $numeroservidores[$i];
     echo $memoriaservidores[$i];
     echo "<br>";
-    $servidor[$i] = [
+    //echo $idrandom;
+    echo "<br>";
 
+    $servidor = [
         '_id' => new MongoDB\BSON\ObjectID,
         'Correo_usuario' => $usuario,
+        'Fecha_Validator' =>$fecha,
+        'CantServidor' => $cantservidor,
         'Servidor' => $servidorid,
         'Procesador' => $procesadorservidor[$i],
         'Cores' => $coreservidores[$i],
@@ -44,10 +59,12 @@ for ($i=0; $i <sizeof($procesadorservidor) && $i <sizeof($coreservidores) && $i 
         'memoria' => $memoriaservidores[$i]
         ];
     
-            $bulk->insert($servidor[$i]);
+          $bulk->insert($servidor);
         
 }
 $result = $manager->executeBulkWrite($dbname1, $bulk);
+
+echo $calculo= "833"*"131";
 
 for ($i=0; $i <sizeof($procesadorstorage) && $i <sizeof($corestorage) && $i <sizeof($numerostorage) && $i <sizeof($memoriastorage); $i++) { 
     echo $usuario;
@@ -60,10 +77,15 @@ for ($i=0; $i <sizeof($procesadorstorage) && $i <sizeof($corestorage) && $i <siz
     echo $numerostorage[$i];
     echo $memoriastorage[$i];
     echo "<br>";
+
+   
+
     $storage= [
 
         '_id' => new MongoDB\BSON\ObjectID,
         'Correo_usuario' => $usuario,
+        'Fecha_Validator' =>$fecha,
+        'CantStorage' =>$cantstorage,
         'Storage' => $storageid,
         'Procesador' => $procesadorstorage[$i],
         'Cores' => $corestorage[$i],
@@ -73,7 +95,7 @@ for ($i=0; $i <sizeof($procesadorstorage) && $i <sizeof($corestorage) && $i <siz
 
         try {
     
-               $bulk1->insert($storage);              
+              $bulk1->insert($storage);              
         
        } catch (MongoDB\Driver\Exception\Exception $e) {
            die("Error Encontrado: ".$e);
@@ -81,5 +103,8 @@ for ($i=0; $i <sizeof($procesadorstorage) && $i <sizeof($corestorage) && $i <siz
 }
 
 $result = $manager1->executeBulkWrite($dbname2, $bulk1);
+
+header("Location: /php/tcocalculator.php?fecha=$fecha");
+
 
 ?>

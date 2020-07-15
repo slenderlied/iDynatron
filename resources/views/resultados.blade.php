@@ -20,19 +20,6 @@ include ("security/seguridadnologin.php");
 <br><br><br>
 
 
-<!-- partial:index.partial.html -->
-<form action="/php/prueba.php" method="post">
-<input type="button" id="add_field" value="adicionar">
-<br>
-<div id="listas">
-    <div><input type="number" name="campo[]"></div>
-</div>
-<br>
-<input type="submit" value="Hola">
-
-</form>
-
-
 
 
 <!-- partial -->
