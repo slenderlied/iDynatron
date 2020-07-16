@@ -5,6 +5,7 @@ session_start();
 $usuario = $_SESSION["correo"];
 $sumstorage = "0";
 $fechafilter = $_GET["fecha"];
+echo $idrandom = $_GET["idrandom"];
 $consumoservidor= "8.33";
 $consumohoras = "2.4";
 $costoenergia = "133";

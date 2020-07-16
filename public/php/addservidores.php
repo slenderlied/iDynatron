@@ -51,6 +51,7 @@ for ($i=0; $i <sizeof($procesadorservidor) && $i <sizeof($coreservidores) && $i 
         '_id' => new MongoDB\BSON\ObjectID,
         'Correo_usuario' => $usuario,
         'Fecha_Validator' =>$fecha,
+        'ID_Validator' =>$idrandom,
         'CantServidor' => $cantservidor,
         'Servidor' => $servidorid,
         'Procesador' => $procesadorservidor[$i],
@@ -104,7 +105,7 @@ for ($i=0; $i <sizeof($procesadorstorage) && $i <sizeof($corestorage) && $i <siz
 
 $result = $manager1->executeBulkWrite($dbname2, $bulk1);
 
-header("Location: /php/tcocalculator.php?fecha=$fecha");
+header("Location: /php/tcocalculator.php?fecha=$fecha&idrandom=$idrandom");
 
 
 ?>
