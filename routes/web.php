@@ -61,4 +61,7 @@ Route::get('pdf', function () {
     return $pdf->stream();
 });
 
-
+Route::get('buscador', function () {
+    return view('buscador');
+ 
+});
