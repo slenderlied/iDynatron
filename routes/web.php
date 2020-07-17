@@ -56,7 +56,7 @@ Route::get('resultados', function () {
 
 Route::get('pdf', function () {
     
-    $pdf = PDF::loadView('pdf');
+    $pdf = PDF::loadView('pdf');    
 
     return $pdf->stream();
 });

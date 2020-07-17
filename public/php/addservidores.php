@@ -86,6 +86,7 @@ for ($i=0; $i <sizeof($procesadorstorage) && $i <sizeof($corestorage) && $i <siz
         '_id' => new MongoDB\BSON\ObjectID,
         'Correo_usuario' => $usuario,
         'Fecha_Validator' =>$fecha,
+        'ID_Validator' =>$idrandom,
         'CantStorage' =>$cantstorage,
         'Storage' => $storageid,
         'Procesador' => $procesadorstorage[$i],

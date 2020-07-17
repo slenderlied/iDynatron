@@ -69,7 +69,7 @@ $cursor = $manager->executeQuery($dbname2, $query);
         $consumototal = round($costoenergia * $consumomensual);
         echo $consumototal;
 
-        // header("Location: /resultados?fecha=$fechafilter");
+    header("Location: /resultados?fecha=$fechafilter&idrandom=$idrandom");
      
                 
         

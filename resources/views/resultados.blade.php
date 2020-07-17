@@ -2,6 +2,10 @@
 include ("database/mongodb.php");
 include ("security/seguridadnologin.php");
 
+echo $idrandom = $_GET["idrandom"];
+echo "<br>";
+echo $fechafilter = $_GET["fecha"];
+echo "<br>";
 //return redirect()->to('menu')->send();
 ?>
 
@@ -16,7 +20,11 @@ include ("security/seguridadnologin.php");
 </head>
 <body>
 
-<a href="/pdf">Ver Informe PDF</a>
+<?php  
+echo "<a href='/pdf?fecha=$fechafilter&idrandom=$idrandom' >Ver Informe PDF</a>";
+?>
+
+
 <br><br><br>
 
 
