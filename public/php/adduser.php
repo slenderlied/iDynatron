@@ -102,6 +102,11 @@ try {
     
         $result = $manager->executeBulkWrite($dbname, $bulk);
         echo "Usuario Creado";
+        $destino = $correo;
+		$desde = "From:"."alejandro.ry98@gmail.cl";
+		$asunto = "Hola";
+		$mensaje = "Creación de cuenta";
+		mail($destino,$asunto,$mensaje,$desde);
           
        header("Location: /login");
 

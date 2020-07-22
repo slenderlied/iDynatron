@@ -5,71 +5,85 @@ session_start();
 $usuario = $_SESSION["correo"];
 $sumstorage = "0";
 $fechafilter = $_GET["fecha"];
-echo $idrandom = $_GET["idrandom"];
-$consumoservidor= "8.33";
-$consumohoras = "2.4";
-$costoenergia = "133";
-
+$idrandom = $_GET["idrandom"];
+$i = 0;
 $filter = [
     'Correo_usuario' => $usuario
     ];
     $query = new MongoDB\Driver\Query($filter);
 
-//$query = new MongoDB\Driver\Query([]);
+$query1 = new MongoDB\Driver\Query([]);
+
+$cursor2 = $manager->executeQuery($dbname4, $query1);
+
+
+$cursor1 = $manager->executeQuery($dbname1, $query);
+
+        // foreach($cursor1 as $row1){
+        //    $fechavalidator = $row1 -> Fecha_Validator;
+        //     $idvalidator = $row1 -> ID_Validator;
+
+        //    if($fechafilter == $fechavalidator && $idrandom == $idvalidator ){
+        //      $especificaciones = $row1 -> Especificaciones;
+
+        //     foreach ($cursor2 as $key[$i]) {
+        //         $nombrehardware = $key[$i] -> nombrehardware;
+        //         $costohardware = $key[$i] -> selection2;
+                
+        //        if ($fechafilter == $fechavalidator && $idrandom == $idvalidator && $nombrehardware==$especificaciones) {
+        //         $storageprocesador = $row1 -> Procesador;
+
+        //         //  $especificaciones = $row1 -> Especificaciones;
+        //          $resultado = substr( $especificaciones,35 );
+        //          echo $resultado;
+                
+                 
+        //        }
+
+        //     }
+
+        // }else{
+
+        // }
+
+        // }
+
+
+
+
+
+
 
 $cursor = $manager->executeQuery($dbname2, $query);
 
         foreach($cursor as $row){
            $fechavalidator = $row -> Fecha_Validator;
-           
-           echo $fechavalidator;
-           echo "<br>";
-           echo "<br>";
-           
+        //    echo $fechavalidator;
+
            $storage = $row -> Storage;
-           echo $storage;
-           
-           echo "<br>";
-           echo "<br>";
+        //    echo $storage;
 
            $storageprocesador = $row -> Procesador;
-           echo $storageprocesador;
-
-           echo "<br>";
-           echo "<br>";
+        //    echo $storageprocesador;
 
            $cantstorage = $row -> CantStorage;
            $sumstorage = $sumstorage + $cantstorage;
-           echo $sumstorage;
+        //    echo $sumstorage;
 
-           echo "<br>";
-           echo "<br>";
 
            if($fechafilter == $fechavalidator){
 
-            echo "1";
-            echo "<br>";
+            // echo "1";
+            // echo "<br>";
         }else{
 
-                echo "2";
-                echo "<br>";
+                // echo "2";
+                // echo "<br>";
         }
 
         }
-        echo "<br>";
 
-        $consumoservidor= round($consumoservidor * $consumohoras);
-        echo $consumoservidor;
-        
-        echo "<br>";
-        $consumomensual = round($sumstorage * $consumoservidor);
-        echo $consumomensual;
- 
-        echo "<br>";
-        $consumototal = round($costoenergia * $consumomensual);
-        echo $consumototal;
-
-    header("Location: /resultados?fecha=$fechafilter&idrandom=$idrandom");
+    // header("Location: /resultados?fecha=$fechafilter&idrandom=$idrandom");
      
                 
         

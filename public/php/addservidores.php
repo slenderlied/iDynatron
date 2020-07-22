@@ -22,7 +22,8 @@ $cantservidor = "1";
 $procesadorservidor = $_POST["servidorprocesador"];
 $coreservidores =  $_POST["coreservidor"];
 $numeroservidores =  $_POST["numeroservidor"];
-$memoriaservidores =  $_POST["memoriaservidor"];
+// $memoriaservidores =  ($_POST["memoriaservidor"];-
+$memoriaservidores=str_replace('.',',',$_POST["memoriaservidor"]);
 
 $bulk1 = new MongoDB\Driver\BulkWrite;
 
@@ -44,6 +45,7 @@ for ($i=0; $i <sizeof($procesadorservidor) && $i <sizeof($coreservidores) && $i 
     echo $numeroservidores[$i];
     echo $memoriaservidores[$i];
     echo "<br>";
+    echo $procecoremeoria[$i] = $procesadorservidor[$i]." procesador, ".$coreservidores[$i]." núcleo/procesador, ".$memoriaservidores[$i]." GB de RAM";
     //echo $idrandom;
     echo "<br>";
 
@@ -53,6 +55,7 @@ for ($i=0; $i <sizeof($procesadorservidor) && $i <sizeof($coreservidores) && $i 
         'Fecha_Validator' =>$fecha,
         'ID_Validator' =>$idrandom,
         'CantServidor' => $cantservidor,
+        'Especificaciones' => $procecoremeoria[$i],
         'Servidor' => $servidorid,
         'Procesador' => $procesadorservidor[$i],
         'Cores' => $coreservidores[$i],

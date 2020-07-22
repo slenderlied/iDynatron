@@ -58,9 +58,13 @@ include ("security/seguridadlogin.php");
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Formato valido: a@b.c">
-						<input class="input100" type="text" name="txtCorreo">
-						<span class="focus-input100" data-placeholder="Correo Electrónico"></span>
+						<input class="input100" type="text" name="txtCorreo" id="txtCorreo">
+						<span class="focus-input100" data-placeholder="Correo Electrónico"></span>				
 					</div>
+
+					<div id="datos">
+
+                    </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Formato valido: a@b.c">
 						<input class="input100" type="text" name="txtOrganizacion">
@@ -117,6 +121,6 @@ include ("security/seguridadlogin.php");
 <!--===============================================================================================-->
 	<script src="js/js/main.js"></script>
 <!--===============================================================================================-->
-    
+<script src="js/js/validar.js"></script>
 </body>
 </html>

@@ -13,6 +13,9 @@ $cursor = $manager->executeQuery($dbname, $query);
 $cursor1 = $manager->executeQuery($dbname, $query);
 $xD=iterator_to_array($cursor);
 
+
+
+
 foreach ($cursor1 as $row){
           
   echo $row -> nombre;

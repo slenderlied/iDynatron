@@ -5,6 +5,10 @@ include ("security/seguridadnologin.php");
 
 //return redirect()->to('menu')->send();
 
+$query = new MongoDB\Driver\Query([]);
+$cursor = $manager->executeQuery($dbname4, $query);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -57,8 +61,8 @@ include ("security/seguridadnologin.php");
       </div>
         </div>
 
-        <form action="php/addservidores.php" method="post">
-        <div id="listas" class="container justify-content-center">
+        <form action="php/tcocalculatoruser.php" method="post">
+        <div id="listas" class="container justify-content-center" >
             <h2>Servidores</h2>
             <div class="form-row">
                 <div class="form-group col-md-3">
@@ -75,7 +79,18 @@ include ("security/seguridadnologin.php");
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Memoria</label>
-                    <input type="number" class="form-control" name="memoriaservidor[]" value="1">
+                    <input type="number" class="form-control" name="memoriaservidor[]" value="1" step="0.01">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="inputPassword4">Memoria</label>   
+                    <select name="nombrehardware" lass="form-control" >
+                    <?php  foreach ($cursor as $row) { ?>
+                    <option value="<?php echo $row -> nombrehardware; ?>" name="nombrehardware" >
+                    <?php echo $row -> nombrehardware; ?>
+                    </option>
+                    <?php } ?>
+                     </select>
                 </div>
             </div>
             <input type="button" id="add_field" value="adicionar">
@@ -98,7 +113,7 @@ include ("security/seguridadnologin.php");
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Memoria</label>
-                    <input type="number" class="form-control" name="memoriastorage[]" value="1">
+                    <input type="number" class="form-control" name="memoriastorage[]" value="1" step="0.01">
                 </div>
                 <input type="button" id="add_field1" value="adicionar">
             </div>
@@ -131,8 +146,6 @@ include ("security/seguridadnologin.php");
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="js/js/servidores.js"></script>
   <script src="js/js/servidores1.js"></script>
-
-
 
 
 

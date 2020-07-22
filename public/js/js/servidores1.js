@@ -19,7 +19,7 @@ var campos_max1 = 4;   //max de 4 campos
                         </div>\
                         <div class="form-group col-md-3">\
                         <label for="inputEmail4">Memoria</label>\
-                        <input type="number" class="form-control" name="memoriastorage[]" value="1">\
+                        <input type="number" class="form-control" name="memoriastorage[]" value="1" step="0.01">\
                         </div>\
                         <a href="#" class="remover_campo">Remover</a>\
                         </div>');
