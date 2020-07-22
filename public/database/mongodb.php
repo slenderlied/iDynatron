@@ -38,6 +38,9 @@
 
             // utilizar base de datos iDynatron y la colección Maquinas_EC2_AWS
             $dbname9 = "iDynatron.Costos_Operaciones";
+
+            // utilizar base de datos iDynatron y la colección Maquinas_EC2_AWS
+            $dbname10 = "iDynatron.Costos_TCO_Usuario";
             
         } catch (MongoConnectionException $e) {
             var_dump($e);

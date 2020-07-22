@@ -82,8 +82,6 @@ for ($i=0; $i <sizeof($procesadorstorage) && $i <sizeof($corestorage) && $i <siz
     echo $memoriastorage[$i];
     echo "<br>";
 
-   
-
     $storage= [
 
         '_id' => new MongoDB\BSON\ObjectID,

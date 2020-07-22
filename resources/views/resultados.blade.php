@@ -1,39 +1,130 @@
 <?php
 include ("database/mongodb.php");
 include ("security/seguridadnologin.php");
+ $fechafilter = $_GET["fecha"];
+ $idrandom = $_GET["idrandom"];
+$correo=$_SESSION['correo'];
+$filter = [
+  'correo' => $correo
+  ];
+  $query = new MongoDB\Driver\Query([]);
 
-echo $idrandom = $_GET["idrandom"];
-echo "<br>";
-echo $fechafilter = $_GET["fecha"];
-echo "<br>";
-//return redirect()->to('menu')->send();
+  $cursor = $manager->executeQuery($dbname10, $query);
+
+  
+    foreach($cursor as $row){
+   $idvalidator = $row -> Id_Validator;
+   $fechavalidator = $row -> Fecha_Validator;
+   $correovalidator = $row -> Correo_Usuario;
+  if ($idrandom == $idvalidator && $fechafilter == $fechavalidator && $correo == $correovalidator) {
+    //On Premise\\ 
+  $costopersonalti = $row -> Costo_Personal_TI_Premise;
+  $hardpremi = $row -> Hardware_Premise;
+  $softpremi = $row -> Software_Premise;
+  $elecpremi = $row -> Electricidad_Premise;
+  $redepremi = $row -> Redes_Premise;
+  $manteremi = $row -> Mantencion_Redes_Premise;
+  $sumtotmes = $row -> Suma_Total_Premise;
+  $sumtotcin = $row -> Suma_Total_Premise_5;
+  //--\\
+
+  //Cloud\\
+
+
+//--\\
+  }
+}
+
+
+
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Resultado TCO </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/css/style1.css" media="all" />
 
 
-</head>
-<body>
+  </head>
+  <body>
+    <header class="clearfix">
+      <h1>Resultado Calculadora TCO </h1>
+      <div id="project">
+        <div><span>PROJECT</span> Website development</div>
+        <div><span>CLIENT</span> John Doe</div>
+        <div><span>ADDRESS</span> 796 Silver Harbour, TX 79273, US</div>
+        <div><span>EMAIL</span> <a href="mailto:john@example.com">john@example.com</a></div>
+        <div><span>DATE</span> August 17, 2015</div>
+        <div><span>DUE DATE</span> September 17, 2015</div>
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th class="service">SERVICE</th>
+            <th class="desc">DESCRIPTION</th>
+            <th>PRICE</th>
+            <th>TOTAL GASTOS MES</th>
+            <th>TOTAL GASTOS 5 AÑOS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service">Design</td>
+            <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
+            <td class="unit">$40.00</td>
+            <td class="qty">26</td>
+            <td class="total">$1,040.00</td>
+          </tr>
+          <tr>
+            <td class="service">Development</td>
+            <td class="desc">Developing a Content Management System-based Website</td>
+            <td class="unit">$40.00</td>
+            <td class="qty">80</td>
+            <td class="total">$3,200.00</td>
+          </tr>
+          <tr>
+            <td class="service">Personal TI</td>
+            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="unit">$<?php echo $costopersonalti?></td>
+            <td class="qty">4</td>
+            <td class="total">$160.00</td>
+          </tr>
+          <tr>
+            <td colspan="4">SUBTOTAL</td>
+            <td class="total">$5,200.00</td>
+          </tr>
+          <tr>
+            <td colspan="4">TAX 25%</td>
+            <td class="total">$1,300.00</td>
+          </tr>
+          <tr>
+            <td colspan="4" class="grand total">GRAND TOTAL</td>
+            <td class="grand total">$6,500.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="notices">
+        <div>Informe:</div>
+        <div class="notice">
+          <form action="/pdf" method="get">   
+          <?php echo "<button type='input' class='btn btn-outline-dark'>Ver Informe PDF</button>";?> 
+          <input type="hidden" name="fecha" value="<?php echo $fechafilter ?>">
+          </form> 
+        </div>
+      </div>
+    </main>
 
-<?php  
-echo "<a href='/pdf?fecha=$fechafilter&idrandom=$idrandom' >Ver Informe PDF</a>";
-?>
 
+    <!-- <footer>
+      Invoice was created on a computer and is valid without the signature and seal.
+    </footer> -->
 
-<br><br><br>
-
-
-
-
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="js/js/validator.js"></script>
-
-
-</body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    
+  </body>
 </html>

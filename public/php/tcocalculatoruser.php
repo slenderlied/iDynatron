@@ -1,6 +1,7 @@
 <?php
 include ("../database/mongodb.php");
 session_start();
+$bulk = new MongoDB\Driver\BulkWrite;
 $usuario = $_SESSION["correo"];
 
 $hardware = $_POST["nombrehardware"];
@@ -85,7 +86,7 @@ echo $manteredes = round($totalredes*$porcredes);
 
 // Suma total \\
 echo "<br>";
-echo $sumatotalfinal = round($costopersonal + $costohardwaretotal + $consumototalwatt + $totalredes + $manteredes);
+echo $sumatotalfinal = round($costopersonal + $costohardwaretotal + $costosoftaretotal + $consumototalwatt + $totalredes + $manteredes);
 echo "<br>";
 echo $sumatotalfinalaños = $sumatotalfinal * 5;
 //--\\
@@ -146,38 +147,42 @@ foreach ($cursor5 as $red) {
        echo $precioredalmacenamiento = round(($precioalmacenamiento)+($redusodigitada*$preciored));
     }
 }
+
+//Suma Total Cloud\\
+$sumatotalcloud = $cloudproducto + $costopersonalcloud + $precioalmacenamiento + $precioredalmacenamiento;
+$sumatotalcloudaños = $sumatotalcloud * 5;
+
 //--\\
-
-// // Costo Operaciones \\
-// $cursor6 = $manager->executeQuery($dbname9, $query);
-// $standardOpera = "Standard Storage";
-// foreach ($cursor6 as $opera) {
-//     $clasedealmacenamiento = $opera -> claseDeAlmacenamiento;
-//     if ($standardOpera == $clasedealmacenamiento) {
-//        $operacionA = $opera -> operacionesClaseA;
-//        $operacionB = $opera -> operacionesClaseB;
-//     }
-
-// }
-// //--\\
 
     try {
 
-        $storage= [
+        $tcocalculos= [
             '_id' => new MongoDB\BSON\ObjectID,
-            'Correo_usuario' => $usuario,
-            'Fecha_Validator' =>$fecha,
-            'ID_Validator' =>$idrandom,
-            'CantStorage' =>$cantstorage,
-            'Storage' => $storageid,
-            'Procesador' => $procesadorstorage,
-            'Cores' => $corestorage,
-            'nservidores' => $numerostorage,
-            'memoria' => $memoriastorage
+            'Correo_Usuario' => $usuario,
+            'Fecha_Validator' => $fecha,
+            'Id_Validator' => $idrandom,
+            'Costo_Personal_TI_Premise' => $costopersonal,
+            'Hardware_Premise' => $costohardwaretotal,
+            'Software_Premise' => $costosoftaretotal,
+            'Electricidad_Premise' => $consumototalwatt,
+            'Redes_Premise' => $totalredes,
+            'Mantencion_Redes_Premise' => $manteredes,
+            'Suma_Total_Premise' => $sumatotalfinal,
+            'Suma_Total_Premise_5' => $sumatotalfinalaños,
+            'Producto_Cloud' => $cloudproducto,
+            'Costo_Personal_Cloud' => $costopersonalcloud,
+            'Costo_Almacenamiento_Cloud' => $precioalmacenamiento,
+            'Costo_Red_Cloud' => $precioredalmacenamiento,
+            'Suma_Total_Cloud' => $sumatotalcloud,
+            'Suma_Total_Cloud_5' => $sumatotalcloudaños
             ];
 
+            $bulk->insert($tcocalculos);
+    
+            $result = $manager->executeBulkWrite($dbname10, $bulk);
+
           $bulk->insert($storage);              
-          $result = $manager1->executeBulkWrite($dbname10, $bulk);
+          header("Location: /resultados?fecha=$fecha&idrandom=$idrandom");
    } catch (MongoDB\Driver\Exception\Exception $e) {
        die("Error Encontrado: ".$e);
    }
