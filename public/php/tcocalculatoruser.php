@@ -1,5 +1,6 @@
 
 <!-- Cambiar esto :c -->
+<!-- :c -->
 <?php
 include ("../database/mongodb.php");
 session_start();
