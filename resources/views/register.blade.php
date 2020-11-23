@@ -48,7 +48,7 @@ include ("security/seguridadlogin.php");
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Formato valido: a@b.c">
-						<input class="input100" type="text" name="txtNombre" minlength="8" maxlength="20">
+						<input class="input100" type="text" name="txtNombre">
 						<span class="focus-input100" data-placeholder="Nombre"></span>
 					</div>
 
@@ -71,7 +71,7 @@ include ("security/seguridadlogin.php");
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="txtContra">
+						<input class="input100" type="password" name="txtContra" minlength="8" maxlength="20">
 						<span class="focus-input100" data-placeholder="Contraseña"></span>
 					</div>
                     
@@ -79,7 +79,7 @@ include ("security/seguridadlogin.php");
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="Confircontra">
+						<input class="input100" type="password" name="Confircontra" minlength="8" maxlength="20">
 						<span class="focus-input100" data-placeholder="Confirmar contraseña"></span>
 					</div>
 

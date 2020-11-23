@@ -82,11 +82,11 @@ $cursor = $manager->executeQuery($dbname4, $query);
                     <input type="number" class="form-control" name="memoriaservidor[]" value="1" step="0.01">
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-5">
                     <label for="inputPassword4">Memoria</label>   
-                    <select name="nombrehardware" lass="form-control" >
+                    <select class="form-control" name="nombrehardware">
                     <?php  foreach ($cursor as $row) { ?>
-                    <option value="<?php echo $row -> nombrehardware; ?>" name="nombrehardware" >
+                    <option class="form-control" value="<?php echo $row -> nombrehardware; ?>" name="nombrehardware" >
                     <?php echo $row -> nombrehardware; ?>
                     </option>
                     <?php } ?>

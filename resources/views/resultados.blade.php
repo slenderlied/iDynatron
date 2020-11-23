@@ -46,10 +46,15 @@ $filter = [
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/css/style1.css" media="all" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
 
   </head>
   <body>
+ 
+  
+
+
     <header class="clearfix">
       <h1>Resultado Calculadora TCO </h1>
       <div id="project">
@@ -61,7 +66,16 @@ $filter = [
         <div><span>DUE DATE</span> September 17, 2015</div>
       </div>
     </header>
+
+
+   
+    <canvas id="myChart" style="height:15vh; width:30vw;"></canvas>
+
+
+
     <main>
+
+ 
       <table>
         <thead>
           <tr>
@@ -123,6 +137,58 @@ $filter = [
     <!-- <footer>
       Invoice was created on a computer and is valid without the signature and seal.
     </footer> -->
+
+
+
+    <script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Primer Año', 'Segundo Año', 'Tercer Año', 'Cuarto Año', 'Quinto Año'],
+        datasets: [{
+            label: 'Gasto On-Premise',
+            data: [ <?php echo $sumtotmes ?>, <?php echo $sumtotmes*2 ?>, <?php echo $sumtotmes*3 ?>, <?php echo $sumtotmes*4 ?>,<?php echo $sumtotmes*5 ?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 5
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options
+});
+
+</script>
+
+
+
+
+
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     

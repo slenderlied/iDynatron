@@ -1,3 +1,36 @@
+<?php
+include ("database/mongodb.php");
+
+
+ $query = new MongoDB\Driver\Query([]);
+
+ $cursor = $manager->executeQuery($dbname10, $query);
+
+ 
+   foreach($cursor as $row){
+   //On Premise\\ 
+ $costopersonalti = $row -> Costo_Personal_TI_Premise;
+ $hardpremi = $row -> Hardware_Premise;
+ $softpremi = $row -> Software_Premise;
+ $elecpremi = $row -> Electricidad_Premise;
+ $redepremi = $row -> Redes_Premise;
+ $manteremi = $row -> Mantencion_Redes_Premise;
+ $sumtotmes = $row -> Suma_Total_Premise;
+ $sumtotcin = $row -> Suma_Total_Premise_5;
+ //--\\
+
+ //Cloud\\
+
+
+//--\\
+ }
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +40,9 @@
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<canvas id="myChart" style="height:40vh; width:80vw"></canvas>
+<canvas id="myChart" style="height:20vh; width:40vw"></canvas>
 
 <canvas id="myChart1" style="height:20vh; width:50vw"></canvas>
-
-
-
-
-
 
 
 
@@ -27,7 +55,7 @@ var myChart = new Chart(ctx, {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [<?php echo $sumtotcin ?>, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
