@@ -129,7 +129,7 @@ if(isset($_SESSION['correo'])){
 	  </div>
      
 	  <div class="form-group text-center mt-4">
-		<form action="/servidores"><input type="submit" value="Calculadora Tco" class="btn btn-primary py-3 px-5"> </form> <br>
+		<form action="/tcoservidores"><input type="submit" value="Calculadora Tco" class="btn btn-primary py-3 px-5"> </form> <br>
 		 <input type="submit" value="Busqueda service Cloud" class="btn btn-primary py-3 px-5">
 	</div>
 

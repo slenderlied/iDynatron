@@ -8,7 +8,7 @@ var campos_max = 4;   //max de 4 campos
                         <div class="form-group col-md-3">\
                         <label for="inputEmail4">Memoria</label>\
                         <select name="nombrehardware[]" lass="form-control" >\
-                        <?php  foreach ($cursor as $row) { ?>\
+                         <?php  foreach ($cursor as $row) { ?>\
                        <option value="<?php echo $row -> nombrehardware; ?>"\
                        "<?php echo $row -> nombrehardware; ?>" \
                        </option> \

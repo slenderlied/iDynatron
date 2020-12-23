@@ -46,7 +46,7 @@ $cursor = $manager->executeQuery($dbname4, $query);
 	<script src="https://kit.fontawesome.com/5ef377022b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<nav id="header" class="header">
+	<nav id="header" class="header pb-0">
     <div class="container text-center">
 			<div class="row">
 				<div class="col-md-12 text-center">
@@ -54,9 +54,6 @@ $cursor = $manager->executeQuery($dbname4, $query);
 					<ul class="ftco-footer-social p-0">
 						<li class="ftco-animate"><a href="menu"><span class="icon-home"></span></a></li>
                         <li class="ftco-animate"><a href="perfilusuario"><span class="icon-user-circle"></span></a></li>
-                        <li></li> <li></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="flaticon-camera-shutter"></span></a></li>
 					</ul>
 				</div>
@@ -64,21 +61,21 @@ $cursor = $manager->executeQuery($dbname4, $query);
 		</div>
 	</nav>
 	<!-- End Nav Section -->
-    <div class="text text-center ">
+    <div class="text text-center ftco-animate">
 						<h1 class="logo "><span class="flaticon-camera-shutter"></span> DynaCloud</a></h1>
 						<h1 class="mb-3"><i>TCO - Consulta Gastos</i></h1>
 					</div>
 
-
+    <form action="php/tcocalculatoruser.php" method="post">
 	 	<!-- Start Services Section -->
-	<section id="services" class="ftco-section pb-1">
+	<section id="services" class="ftco-section pb-1 p-0">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9 ">
 					<div class="row">
-						<div class="col-md-5 heading-section ftco-animate pb-2">
+						<div class="col-md-5 heading-section ftco-animate pb-1">
 							<h1 class="mb-4">Servidores</h1>
-							<h2 class="mb-4">Servidor</h2>
+							<h2 class="mb-4" style="font-size: 20px;">Servidor</h2>
 						</div>
                     </div>
                     
@@ -86,7 +83,7 @@ $cursor = $manager->executeQuery($dbname4, $query);
 						<div class="col-md-6">
 							<div class="media block-4 services d-block ftco-animate">
                                 <div class="media-body">
-                                <select class="form-control" style="" name="nombrehardware">
+                                <select class="form-control form-control-lg" name="nombrehardware">
                     <?php  foreach ($cursor as $row) { ?>
                     <option value="<?php echo $row -> nombrehardware; ?>" name="nombrehardware" >
                     <?php echo $row -> nombrehardware; ?>
@@ -97,6 +94,16 @@ $cursor = $manager->executeQuery($dbname4, $query);
 							</div>
                         </div>
                         
+						<div class="row">
+						<div class="col-md-6">
+							<div class="media block-4 services d-block ftco-animate">
+                                <div class="media-body">
+								<input type="button" value="Agregar" class="btn btn-primary py-3 px-5" id="add_field" >
+								</div>
+							</div>
+                        </div>
+
+
 								</div>
 							</div>
                         </div>
@@ -109,7 +116,7 @@ $cursor = $manager->executeQuery($dbname4, $query);
     
 
 <!-- Start Services Section -->
-<section id="services" class="ftco-section">
+<section id="services" class="ftco-section pb-0 p-8 ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
@@ -160,21 +167,16 @@ $cursor = $manager->executeQuery($dbname4, $query);
 
 
 
-
-
-
-
-
-    <div class="form-group text-center mt-3 pb-0">
+    <div class="form-group text-center mt-3 pb-0 ftco-animate">
 	  <form action="/cloudinformacion">
 		<input type="submit" value="Calcular" class="btn btn-primary py-3 px-5">
       </form>	
     </div>
     
-
+</form>
 
 	<!-- Start Footer Section -->
-	<footer class="ftco-footer py-5">
+	<footer class="ftco-footer py-5 ftco-animate">
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-md-12 text-center">
@@ -203,6 +205,9 @@ $cursor = $manager->executeQuery($dbname4, $query);
 			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
 				stroke="#F96D00" /></svg></div>
 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/js/servidores.js"></script>
+  <script src="js/js/servidores1.js"></script>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>

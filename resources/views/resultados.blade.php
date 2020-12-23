@@ -54,14 +54,12 @@ $filter = [
  
   
 
-
     <header class="clearfix">
       <h1>Resultado Calculadora TCO </h1>
       <div id="project">
-        <div><span>PROJECT</span> Website development</div>
         <div><span>CLIENT</span> John Doe</div>
         <div><span>ADDRESS</span> 796 Silver Harbour, TX 79273, US</div>
-        <div><span>EMAIL</span> <a href="mailto:john@example.com">john@example.com</a></div>
+        <div><span>EMAIL</span><?php echo $correo ?></a></div>
         <div><span>DATE</span> August 17, 2015</div>
         <div><span>DUE DATE</span> September 17, 2015</div>
       </div>
@@ -76,15 +74,33 @@ $filter = [
         <canvas id="myChart" style="height:15vh; width:30vw;"></canvas>
 				</div>
 
-				<div class="col-md-6 d-flex align-items-stretch">
-					<div id="map">     
-          <canvas id="myChart2" style="height:15vh; width:30vw;"></canvas>
-          </div>
-				</div>
+
 			</div>
 
 		</div>
 	</section>
+
+
+
+
+
+
+
+
+    <div id="notices">
+        <div>Informe:</div>
+        <div class="notice">
+          <form action="/pdf" method="get">   
+          <?php echo "<button type='input' class='btn btn-outline-dark'>Ver Informe PDF</button>";?> 
+          <input type="hidden" name="fecha" value="<?php echo $fechafilter ?>">
+          </form> 
+        </div>
+      </div>
+
+
+
+
+
 
     <script>
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -116,65 +132,16 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: false
                 }
             }]
         }
     }
 });
 
-var myPieChart = new Chart(ctx, {
-    type: 'pie',
-    data: data,
-    options: options
-});
 
 </script>
 
-<script>
-var ctx = document.getElementById('myChart2').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Primer Año', 'Segundo Año', 'Tercer Año', 'Cuarto Año', 'Quinto Año'],
-        datasets: [{
-            label: 'Gasto On-Premise',
-            data: [ <?php echo $sumtotmes ?>, <?php echo $sumtotmes*2 ?>, <?php echo $sumtotmes*3 ?>, <?php echo $sumtotmes*4 ?>,<?php echo $sumtotmes*5 ?>],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.8)',
-                'rgba(54, 162, 235, 0.8)',
-                'rgba(255, 206, 86, 0.8)',
-                'rgba(75, 192, 192, 0.8)',
-                'rgba(153, 102, 255, 0.8)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 5
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-
-var myPieChart = new Chart(ctx, {
-    type: 'pie',
-    data: data,
-    options: options
-});
-
-</script>
 
 
 

@@ -185,7 +185,7 @@ $sumatotalcloudaños = $sumatotalcloud * 5;
             $result = $manager->executeBulkWrite($dbname10, $bulk);
 
           $bulk->insert($storage);              
-          header("Location: /resultados?fecha=$fecha&idrandom=$idrandom");
+          header("Location: /tcoresultados?fecha=$fecha&idrandom=$idrandom");
    } catch (MongoDB\Driver\Exception\Exception $e) {
        die("Error Encontrado: ".$e);
    }

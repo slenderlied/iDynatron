@@ -58,6 +58,11 @@ Route::get('resultados', function () {
  
 });
 
+Route::get('tcoresultados', function () {
+    return view('tcoresultados');
+ 
+});
+
 Route::get('pdf', function () {
     
     $pdf = PDF::loadView('pdf');    
