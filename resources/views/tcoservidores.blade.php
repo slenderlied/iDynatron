@@ -54,7 +54,7 @@ $cursor = $manager->executeQuery($dbname4, $query);
 					<ul class="ftco-footer-social p-0">
 						<li class="ftco-animate"><a href="menu"><span class="icon-home"></span></a></li>
                         <li class="ftco-animate"><a href="perfilusuario"><span class="icon-user-circle"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="flaticon-camera-shutter"></span></a></li>
+						<li class="ftco-animate"><a href="#"><span class="fas fa-sign-out-alt"></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -68,8 +68,8 @@ $cursor = $manager->executeQuery($dbname4, $query);
 
     <form action="php/tcocalculatoruser.php" method="post">
 	 	<!-- Start Services Section -->
-	<section id="services" class="ftco-section pb-1 p-0">
-		<div class="container">
+	<section id="services" class="ftco-section pb-1 p-0 contact-section ">
+		<div class="container box">
 			<div class="row">
 				<div class="col-md-9 ">
 					<div class="row">
@@ -116,18 +116,18 @@ $cursor = $manager->executeQuery($dbname4, $query);
     
 
 <!-- Start Services Section -->
-<section id="services" class="ftco-section pb-0 p-8 ">
-		<div class="container">
+<section id="services" class="ftco-section pb-0 p-8 contact-section">
+		<div class="container box">
 			<div class="row">
-				<div class="col-md-9">
+				<div class="col-md-9 ">
 					<div class="row">
-						<div class="col-md-5 heading-section ftco-animate pb-0">
+						<div class="col-md-5 heading-section ftco-animate pb-0 ">
 							<h1 class="mb-4">Costos (CLP)</h1>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
-							<div class="media block-6 services d-block ftco-animate">
+							<div class="media block-6 services d-block ftco-animate ">
 								<div class="icon"></div>
 								<div class="media-body">
 									<h4 class="heading mb-3">Electricidad</h4>

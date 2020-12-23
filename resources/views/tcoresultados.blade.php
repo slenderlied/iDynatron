@@ -4,9 +4,27 @@ include ("security/seguridadnologin.php");
  $fechafilter = $_GET["fecha"];
  $idrandom = $_GET["idrandom"];
 $correo=$_SESSION['correo'];
+$dolar= 750;
 $filter = [
   'correo' => $correo
   ];
+
+  $query1 = new MongoDB\Driver\Query($filter);
+
+  $cursor1 = $manager1->executeQuery($dbname, $query1);
+
+  foreach ($cursor1 as $row1) {
+    $nombreusua = $row1 -> nombre;
+    $apeusua = $row1 -> apellido;
+    $correousua = $row1 -> correo;
+    $orgausua = $row1 -> organizacion;
+    $tipousua = $row1 -> tipoUsuario;
+
+  }
+
+
+
+
   $query = new MongoDB\Driver\Query([]);
 
   $cursor = $manager->executeQuery($dbname10, $query);
@@ -27,13 +45,29 @@ $filter = [
   $sumtotmes = $row -> Suma_Total_Premise;
   $sumtotcin = $row -> Suma_Total_Premise_5;
   //--\\
+ 
 
   //Cloud\\
+  $sumcloud = $row -> Suma_Total_Cloud;
+
+  //--\\
+  //Conversión Precio Dolar a Pesos Chilenos\\
+  //On Premise\\ 
+  $clpsumtotmes= $sumtotmes*$dolar;
 
 
-//--\\
-  }
+  //--\\
+  //Cloud\\
+
+  $clpsumcloud= $sumcloud*$dolar;
+
+  //--\\
 }
+}
+
+
+
+
 
 ?>
 
@@ -84,7 +118,7 @@ $filter = [
 					<ul class="ftco-footer-social p-0">
 						<li class="ftco-animate"><a href="menu"><span class="icon-home"></span></a></li>
                         <li class="ftco-animate"><a href="perfilusuario"><span class="icon-user-circle"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="flaticon-camera-shutter"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="fas fa-sign-out-alt"></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -96,60 +130,52 @@ $filter = [
 						<h1 class="mb-3"><i>Resultado Servidores</i></h1>
 					</div>
 
-
-
 	<!-- Start Contact Section -->
-	<section class="ftco-section contact-section" id="contact">
+	<section class="ftco-section contact-section p-2" id="contact">
 		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-4 heading-section text-center ftco-animate">
-					<h2 class="mb-4">Contactactanos </h2>
-					<p>Contactanos por cualquier medio disponible.</p>
-				</div>
-			</div>
 
 			<div class="row mb-5">
 				<div class="col-md-3 d-flex ftco-animate">
 					<div class="align-self-stretch box text-center p-4">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
+							<span class="icon-user-circle"></span>
 						</div>
 						<div>
-							<h3 class="mb-4">Dirección</h3>
-							<p>empresa ubicada en La Serena-Región de coquimbo</p>
+							<h5 class="mb-4">Usuario</h5>
+							<p style="font-size: 18px;"  ><?php echo $nombreusua ?> <?php echo $apeusua?></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex ftco-animate">
 					<div class="align-self-stretch box text-center p-4">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
+							<span class="far fa-envelope"></span>
 						</div>
 						<div>
-							<h3 class="mb-4">N° de Contacto </h3>
-							<p><a href="#">+ 1235 2355 98</a></p>
+							<h5 class="mb-4">Correo Usuario</h5>
+							<p style="font-size: 18px;"><?php echo $correousua ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex ftco-animate">
 					<div class="align-self-stretch box text-center p-4">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
+							<span class="far fa-building"></span>
 						</div>
-						<div>
-							<h3 class="mb-4">Dirección de Email</h3>
-							<p><a href="#">info@yoursite.com</a></p>
+						<div>     
+							<h5 class="mb-4">Organización</h5>
+							<p style="font-size: 18px;"><?php echo $orgausua ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex ftco-animate">
 					<div class="align-self-stretch box text-center p-4">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
+							<span class="far fa-address-card"></span>
 						</div>
 						<div>
-							<h3 class="mb-4">Website</h3>
-							<p><a href="#">iDynatron.com</a></p>
+							<h5 class="mb-4">Tipo Cuenta</h5>
+							<p style="font-size: 18px;"><?php echo $tipousua ?></p>
 						</div>
 					</div>
 				</div>
@@ -158,26 +184,32 @@ $filter = [
 			<div class="row block-9">
 				<div class="col-md-6 ftco-animate">
 					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+                    <h2 class="mb-4 text-center">ON-PREMISE</h2>
+					</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Tu Nombre">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder=" Email">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Asunto">
-						</div>
-						<div class="form-group">
-							<textarea name="" id="" cols="30" rows="7" class="form-control"
-								placeholder="Mensaje"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5">
+                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
 						</div>
 					</form>
 				</div>
 
-				
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+                    <h2 class="mb-4 text-center">CLOUD</h2>
+					</div>
+						<div class="form-group">
+                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumcloud, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
+						</div>
+						
+					</form>
+				</div>
 			</div>
 		</div>
 	</section>
