@@ -51,11 +51,8 @@ if($txtFoto!=""){
     $tmpFoto= $_FILES["txtFoto"]["tmp_name"];
    echo "2";
     if($tmpFoto!=""){
-        
-       $holi= move_uploaded_file($tmpFoto,"../images/files/".$nombreArchivo);
-        
+       $imagen= move_uploaded_file($tmpFoto,"../images/files/".$nombreArchivo);
     }
-
 }else if($txtFoto==""){
     $txtFoto="usuarioperfil.jpg";
     $nombreArchivo=($txtFoto=="")?$_FILES["txtFoto"]["name"]:"usuarioperfil.jpg";
@@ -64,7 +61,7 @@ if($txtFoto!=""){
     echo "3";
     if($tmpFoto==""){
         
-       $holi= move_uploaded_file($tmpFoto,"../images/files/".$nombreArchivo);
+       $imagen= move_uploaded_file($tmpFoto,"../images/files/".$nombreArchivo);
         
     }
 

@@ -40,7 +40,7 @@
 		<ul class="nav-menu">
 			<li>
 				<a data-scroll="home" href="#home" class="dot active">
-					<span>Home</span>
+					<span>Inicio</span>
 				</a>
 			</li>
 			
@@ -73,7 +73,7 @@
 				<div class="col-lg-7 ftco-animate d-flex align-items-center">
 					<div class="text text-center">
 						<h1 class="logo"><a href="index.html"><span
-									class="flaticon-camera-shutter"></span>iDynatron<small>Desarrolladores / Equipo
+									class="flaticon-camera-shutter"></span>DynaCloud<small>Desarrolladores / Equipo
 									IT</small></a></h1>
 						<h1 class="mb-4"><i>CREAMOS <br>NUEVAS FRONTERAS</i></h1>
 						<p class="mb-4">Incentivar el uso de las nuevas tecnologías (cloud) en las pequeñas y medianas

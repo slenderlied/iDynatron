@@ -49,7 +49,7 @@ $cursor = $manager->executeQuery($dbname4, $query);
 
     <div class="titulo-blog">
         <div class="contenedor">
-          <h1><a href="#">iDynatron</a></h1>
+          <h1><a href="#">DynaCloud</a></h1>
           <p class="subtitulo">Consulta Gastos</p>
         </div>
       </div>
@@ -65,25 +65,10 @@ $cursor = $manager->executeQuery($dbname4, $query);
         <div id="listas" class="container justify-content-center" >
             <h2>Servidores</h2>
             <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="inputEmail4">Procesador</label>
-                    <input type="number" class="form-control" name="servidorprocesador[]" value="1">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputPassword4">Cores</label>
-                    <input type="number" class="form-control" name="coreservidor[]" value="1">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputPassword4">N° Servidores</label>
-                    <input type="number" class="form-control" name="numeroservidor[]" value="1">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputPassword4">Memoria</label>
-                    <input type="number" class="form-control" name="memoriaservidor[]" value="1" step="0.01">
-                </div>
+                
 
                 <div class="form-group col-md-5">
-                    <label for="inputPassword4">Memoria</label>   
+                    <label for="inputPassword4">Servidor</label>   
                     <select class="form-control" name="nombrehardware">
                     <?php  foreach ($cursor as $row) { ?>
                     <option class="form-control" value="<?php echo $row -> nombrehardware; ?>" name="nombrehardware" >
@@ -92,31 +77,19 @@ $cursor = $manager->executeQuery($dbname4, $query);
                     <?php } ?>
                      </select>
                 </div>
+
+                <div class="form-group col-md-3">
+                    <label for="inputEmail4">Agregar Servidor</label>
+                    <input type="button" class="form-control btn btn-primary" id="add_field" value="agregar">
+                </div>
+              
             </div>
-            <input type="button" id="add_field" value="adicionar">
+            <div class="form-group col-md-2">
+            
+                </div>
             </div>
 
-            <div id="listas1" class="container justify-content-center">
-            <h2>Storage </h2>
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="inputEmail4">Procesador</label>
-                    <input type="number" class="form-control" name="procesadorstorage[]" value="1">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputPassword4">Cores</label>
-                    <input type="number" class="form-control" name="corestorage[]" value="1">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputPassword4">N° Servidores</label>
-                    <input type="number" class="form-control" name="numerostorage[]" value="1">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputPassword4">Memoria</label>
-                    <input type="number" class="form-control" name="memoriastorage[]" value="1" step="0.01">
-                </div>
-                <input type="button" id="add_field1" value="adicionar">
-            </div>
+
     </div>
     <div class="container justify-content-center col-md-2">
     <button type="submit" class="btn btn-primary">Calcular</button>

@@ -45,6 +45,10 @@ Route::get('servidores', function () {
     return view('servidores');
 });
 
+Route::get('tcoservidores', function () {
+    return view('tcoservidores');
+});
+
 Route::get('dashboard', function () {
     return view('dashboard');
 });
