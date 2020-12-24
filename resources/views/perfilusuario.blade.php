@@ -1,35 +1,38 @@
 <?php
-
 include ("database/mongodb.php");
 include ("security/seguridadnologin.php");
 
 $correo=$_SESSION['correo'];
-
 $filter = [
-    'correo' => $correo
-    ];
-    $query = new MongoDB\Driver\Query($filter);
+  'correo' => $correo
+  ];
 
-//$query = new MongoDB\Driver\Query([]);
+  $query1 = new MongoDB\Driver\Query($filter);
+  $cursor1 = $manager1->executeQuery($dbname, $query1);
 
-$cursor = $manager->executeQuery($dbname, $query);
+  foreach ($cursor1 as $row1) {
+    $nombreusua = $row1 -> nombre;
+    $apeusua = $row1 -> apellido;
+    $correousua = $row1 -> correo;
+    $orgausua = $row1 -> organizacion;
+	$tipousua = $row1 -> tipoUsuario;
+	$fotousu = $row1 -> foto;
+  }
 
-        foreach($cursor as $row){
-			
 ?>
-        
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>iDynatron | Perfil de Usuario</title>
+	<title>iDynatron - Pefil Usuario</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -46,105 +49,121 @@ $cursor = $manager->executeQuery($dbname, $query);
 	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="css/jquery.timepicker.css">
 
+
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="css/estilos.css">
 
 	<script src="https://kit.fontawesome.com/5ef377022b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<div class="header">
-    <div class="top-header">
-      <div class="contenedor">
-         <div class="top-menu">
-           <ul>
-             <li><a href="/menu">INICIO</a></li>
-             <li><a href="#">ACERCA DE</a></li>
-             <li><a href="#">CONTACTO</a></li>
-             <li><a style="text-transform: uppercase">HOLA: <?php echo $_SESSION['nombre']?> <?php echo $_SESSION['apellido']?></a></li>
-           </ul>
-         </div>
-        <div class="top-redes">
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">twitter</a></li>
-            <li><a href="#">facebook</a></li>
-			<li><a href="../php/logout.php">Cerrar Sesión</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-	<div class="titulo-blog ">
-        <div class="contenedor">
-          <h1><a class="text-white">iDynatron</a></h1>
-          <p class="subtitulo">Perfil Usuario</p>
-        </div>
-      </div>
-    
-      <div class="menu-principal">
-        <div class="contenedor">
-          
-        </div>
-      </div>
-        </div>
-
-
-	<section class="testimony-section" id="testimonial">
-    <div class="container">
-
-	<div class="row justify-content-center mb-5 pb-3" >
-				<div class="col-md-4 heading-section ftco-animate">
-				<div class="item">
-
-							<div class="testimony-wrap p-4 pb-5 text-center">
-								<div class="user-img mb-4 text-center" style="background-image: url(images/files/<?php echo $row -> foto ?>); display: block; margin:auto;">
-								</div>
-								<span class="position text-center" style="font-size: 15px;"><?php echo $row -> correo ?></span>
-								<div class="text text-center">
-								<div class="pl-auto">
-								<p class="mb-4 pl-2 line name" style="font-size: 18px"><?php echo $row -> nombre ?> <?php echo $row -> apellido ?></p>
-					            <h2 class="mb-4 text-center"><?php echo $row -> organizacion ?></h2>
-								<h2 class="mb-4 text-center"><?php echo $row -> tipoUsuario ?></h2>		
-								<div class="form-group mb-5 d-inline-flex" style="">
-								<form action="/modificarusuario" method="get">
-								<input type="hidden" name="txtId" value="<?php echo $row -> _id ?>">
-                                <input type="hidden" name="txtNombre" value="<?php echo $row -> nombre ?>">
-                                <input type="hidden" name="txtApellido" value="<?php echo $row -> apellido ?>">
-                                <input type="hidden" name="txtCorreo" value="<?php echo $row -> correo ?>">
-                                <input type="hidden" name="txtContra" value="<?php echo $row -> contrasena ?>">
-                                <input type="hidden" name="txtOrganizacion" value="<?php echo $row -> organizacion ?>">
-								<input type="hidden" name="txtFoto" value="<?php echo $row -> foto ?>">
-                                <input type="hidden" name="txtTipoUsuario" value="<?php echo $row -> tipoUsuario ?>">
-								<input type="hidden" name="txtFecha" value="<?php echo $row -> fecha ?>">
-								<input type="hidden" name="txtTiempo" value="<?php echo $row -> tiempo ?>">
-                                <input type="submit" value="Modificar" name="btnModificar" class="btn btn-primary py-10 px-2" >
-                                </form>
-
-							 <input type="submit" value="Dashboard" name="btnDashboard" class="btn btn-primary py-10 px-2">
-                        
-
-						
-                            
-						</div>
-									</div>
-								</div>
-							</div>		
+<nav id="header" class="header pb-0">
+    <div class="container text-center">
+			<div class="row">
+				<div class="col-md-12 text-center">
+                <h1></h1>
+					<ul class="ftco-footer-social p-0">
+						<li class="ftco-animate"><a href="menu"><span class="icon-home"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="fas fa-sign-out-alt"></span></a></li>
+					</ul>
+					
 				</div>
 			</div>
-	
-	</div>
-    </section>
-    
-<?php 
+		</div>
+	</nav>
+	<!-- End Nav Section -->
 
-}
 
-?>
+    <div class="text text-center ftco-animate">
+						<h1 class="logo "><span class="flaticon-camera-shutter"></span> DynaCloud</a></h1>
+						<h1 class="mb-3"><i>Perfil Usuario</i></h1>
+					</div>
+					<div class=" text-center p-4 pb-5 mb-5 ftco-animate">
+								<div class="user-img mb-5">
+								<img src="images/files/<?php echo $fotousu ?>" style="width: 125px; height: 125px;" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
+								</div>
+	<!-- Start Contact Section -->
+	<section class="ftco-section contact-section p-2" id="contact">
+		<div class="container">
+
+			<div class="row mb-5">
+				<div class="col-md-3 d-flex ftco-animate">
+					<div class="align-self-stretch box text-center p-4">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-user-circle"></span>
+						</div>
+						<div>
+							<h5 class="mb-4">Usuario</h5>
+							<p style="font-size: 18px;"  ><?php echo $nombreusua ?> <?php echo $apeusua?></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex ftco-animate">
+					<div class="align-self-stretch box text-center p-4">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="far fa-envelope"></span>
+						</div>
+						<div>
+							<h5 class="mb-4">Correo Usuario</h5>
+							<p style="font-size: 18px;"><?php echo $correousua ?></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex ftco-animate">
+					<div class="align-self-stretch box text-center p-4">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="far fa-building"></span>
+						</div>
+						<div>     
+							<h5 class="mb-4">Organización</h5>
+							<p style="font-size: 18px;"><?php echo $orgausua ?></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex ftco-animate">
+					<div class="align-self-stretch box text-center p-4">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="far fa-address-card"></span>
+						</div>
+						<div>
+							<h5 class="mb-4">Tipo Cuenta</h5>
+							<p style="font-size: 18px;"><?php echo $tipousua ?></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row block-9">
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+					<p style="font-size: 10px;"  ></p>
+                    <h2 class="mb-4 text-center">Modificar Perfil</h2>
+					</div>
+					</form>
+				</div>
+
+				
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+					<p style="font-size: 10px;"  ></p>	
+                    <h2 class="mb-4 text-center">CLOUD</h2>
+					</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Contact Section -->
+
+
+		
+
 	<!-- Start Footer Section -->
 	<footer class="ftco-footer py-5">
 		<div class="container text-center">
@@ -195,5 +214,3 @@ $cursor = $manager->executeQuery($dbname, $query);
 </body>
 
 </html>
-
-

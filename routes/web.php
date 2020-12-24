@@ -33,6 +33,10 @@ Route::get('menu', function () {
     return view('menu');
 });
 
+Route::get('menuprincipal', function () {
+    return view('menuprincipal');
+});
+
 Route::get('perfilusuario', function () {
     return view('perfilusuario');
 });
