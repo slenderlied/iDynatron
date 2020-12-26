@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION['correo'])){
 
-      return redirect()->to('menu')->send();
+      return redirect()->to('menuprincipal')->send();
     
 }
 

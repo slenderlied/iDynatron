@@ -14,13 +14,13 @@ $txtTipoUsuario = $_GET['txtTipoUsuario'];
 $txtFecha = $_GET['txtFecha'];
 $txtTiempo = $_GET['txtTiempo'];
 
-
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Modificar Usuario | iDynatron</title>
+	<title>iDynatron - Modificar Usuario</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	

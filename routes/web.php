@@ -45,6 +45,10 @@ Route::get('modificarusuario', function () {
     return view('modificarusuario');
 });
 
+Route::get('consultasservidoresusuario', function () {
+    return view('consultasservidoresusuario');
+});
+
 Route::get('servidores', function () {
     return view('servidores');
 });

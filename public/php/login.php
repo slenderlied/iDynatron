@@ -24,7 +24,7 @@ try {
     $_SESSION['apellido']=$user2;
     $_SESSION['token']=md5(uniqid(mt_rand(),true));
 
-  header("Location: /menu");
+  header("Location: /menuprincipal");
 
 } catch (MongoDB\Driver\Exception\Exception $e) {
     die("Error Encontrado: ".$e);

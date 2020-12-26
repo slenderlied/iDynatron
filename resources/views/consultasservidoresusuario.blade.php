@@ -1,87 +1,8 @@
-<?php
-include ("database/mongodb.php");
-include ("security/seguridadnologin.php");
- $fechafilter = $_GET["fecha"];
- $idrandom = $_GET["idrandom"];
-$correo=$_SESSION['correo'];
-$dolar= 750;
-$filter = [
-  'correo' => $correo
-  ];
-
-  $query1 = new MongoDB\Driver\Query($filter);
-
-  $cursor1 = $manager1->executeQuery($dbname, $query1);
-
-  foreach ($cursor1 as $row1) {
-    $nombreusua = $row1 -> nombre;
-    $apeusua = $row1 -> apellido;
-    $correousua = $row1 -> correo;
-    $orgausua = $row1 -> organizacion;
-    $tipousua = $row1 -> tipoUsuario;
-
-  }
-
-
-
-
-  $query = new MongoDB\Driver\Query([]);
-
-  $cursor = $manager->executeQuery($dbname10, $query);
-
-  
-    foreach($cursor as $row){
-   $idvalidator = $row -> Id_Validator;
-   $fechavalidator = $row -> Fecha_Validator;
-   $correovalidator = $row -> Correo_Usuario;
-  if ($idrandom == $idvalidator && $fechafilter == $fechavalidator && $correo == $correovalidator) {
-    //On Premise\\ 
-  $costopersonalti = $row -> Costo_Personal_TI_Premise;
-  $hardpremi = $row -> Hardware_Premise;
-  $softpremi = $row -> Software_Premise;
-  $elecpremi = $row -> Electricidad_Premise;
-  $redepremi = $row -> Redes_Premise;
-  $manteremi = $row -> Mantencion_Redes_Premise;
-  $sumtotmes = $row -> Suma_Total_Premise;
-  $sumtotcin = $row -> Suma_Total_Premise_5;
-  //--\\
- 
-
-  //Cloud\\
-  $sumcloud = $row -> Suma_Total_Cloud;
-
-  //--\\
-  //Conversión Precio Dolar a Pesos Chilenos\\
-  //On Premise\\ 
-  $clpsumtotmes= $sumtotmes*$dolar;
-
-
-  //--\\
-  //Cloud\\
-
-  $clpsumcloud= $sumcloud*$dolar;
-
-  //--\\
-
-  //Consultas Cloud - On Premise\\
-  $dif1 = (($clpsumtotmes - $clpsumcloud)/100) ;
-  //--\\
-
-}
-}
-
-
-
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>iDynatron - Resultados Consulta</title>
+	<title>iDynatron</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -115,134 +36,56 @@ $filter = [
 <body>
 
 
-<nav id="header" class="header pb-0">
-    <div class="container text-center">
-			<div class="row">
-				<div class="col-md-12 text-center">
-                <h1></h1>
-					<ul class="ftco-footer-social p-0">
-						<li class="ftco-animate"><a href="menu"><span class="icon-home"></span></a></li>
-                        <li class="ftco-animate"><a href="perfilusuario"><span class="icon-user-circle"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="fas fa-sign-out-alt"></span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+	<nav id="navbar" class="navbar">
+		<ul class="nav-menu">
+			<li>
+				<a data-scroll="home" href="#home" class="dot active">
+					<span>Inicio</span>
+				</a>
+			</li>
+			
+			<li>
+				<a data-scroll="services" href="#services" class="dot">
+					<span>Cloud</span>
+				</a>
+			</li>
+			
+			<li>
+				<a data-scroll="testimonial" href="#testimonial" class="dot">
+					<span>Desarrolladores</span>
+				</a>
+			</li>
+			<li>
+				<a data-scroll="contact" href="#contact" class="dot">
+					<span>Contacto</span>
+				</a>
+			</li>
+		</ul>
 	</nav>
 	<!-- End Nav Section -->
-    <div class="text text-center ftco-animate">
-						<h1 class="logo "><span class="flaticon-camera-shutter"></span> DynaCloud</a></h1>
-						<h1 class="mb-3"><i>Resultado Servidores</i></h1>
-					</div>
 
-	<!-- Start Contact Section -->
-	<section class="ftco-section contact-section p-2" id="contact">
+	<!-- Start Home Section -->
+	<section id="home" class="hero-wrap js-fullheight" style="background-image: url(images/bg-principal.jpg);"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
 		<div class="container">
-
-			<div class="row mb-5">
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-user-circle"></span>
-						</div>
-						<div>
-							<h5 class="mb-4">Usuario</h5>
-							<p style="font-size: 18px;"  ><?php echo $nombreusua ?> <?php echo $apeusua?></p>
-						</div>
+			<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+				<div class="col-lg-7 ftco-animate d-flex align-items-center">
+					<div class="text text-center">
+						<h1 class="logo"><a href="index.html"><span
+									class="flaticon-camera-shutter"></span>DynaCloud<small>Desarrolladores / Equipo
+									IT</small></a></h1>
+						<h1 class="mb-4"><i>CREAMOS <br>NUEVAS FRONTERAS</i></h1>
+						<p class="mb-4">Incentivar el uso de las nuevas tecnologías (cloud) en las pequeñas y medianas
+							empresas, dando servicios completos de asesoría.</p>
+						<p class="mt-5"><a href="/login" class="btn-custom">Incorpórate <span
+									class="ion-ios-arrow-round-forward"></span></a></p>
 					</div>
-				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="far fa-envelope"></span>
-						</div>
-						<div>
-							<h5 class="mb-4">Correo Usuario</h5>
-							<p style="font-size: 18px;"><?php echo $correousua ?></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="far fa-building"></span>
-						</div>
-						<div>     
-							<h5 class="mb-4">Organización</h5>
-							<p style="font-size: 18px;"><?php echo $orgausua ?></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="far fa-address-card"></span>
-						</div>
-						<div>
-							<h5 class="mb-4">Tipo Cuenta</h5>
-							<p style="font-size: 18px;"><?php echo $tipousua ?></p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row block-9">
-				<div class="col-md-6 ftco-animate">
-					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
-                    <div class="form-group">
-                    <h2 class="mb-4 text-center">ON-PREMISE</h2>
-					</div>
-						<div class="form-group">
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-						</div>
-					</form>
-				</div>
-
-				<div class="col-md-6 ftco-animate">
-					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
-                    <div class="form-group">
-                    <h2 class="mb-4 text-center">CLOUD</h2>
-					</div>
-						<div class="form-group">
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumcloud, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-						</div>
-						
-					</form>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- End Contact Section -->
-
-
-
-     
-	  <div class="form-group text-center mt-4">
-	  <form action="/cloudinformacion">
-		<input type="submit" value="Ver Más" class="btn btn-primary py-3 px-5">
-      </form>	
-	</div>
-	 
-
-
-
-    <div id="notices">
-        <div>Informe:</div>
-        <div class="notice">
-          <form action="/pdf" method="get">   
-          <?php echo "<button type='input' class='btn btn-outline-dark'>Ver Informe PDF</button>";?> 
-          <input type="hidden" name="fecha" value="<?php echo $fechafilter ?>">
-          </form> 
-        </div>
-      </div>
-
-
+	<!-- End Home Section -->
 
 
 
@@ -310,7 +153,7 @@ $filter = [
 								<h2 class="text-center mb-4">Eficiencia</h2>
 
 								<!-- Progress bar 1 -->
-								<div class="progress mx-auto" data-value='2'>
+								<div class="progress mx-auto" data-value='90'>
 									<span class="progress-left">
 										<span class="progress-bar border-primary"></span>
 									</span>
@@ -319,7 +162,7 @@ $filter = [
 									</span>
 									<div
 										class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-										<div class="h5"><?php  echo number_format($dif1); ?> <sup class="small">%</sup></div>
+										<div class="h5">90<sup class="small">%</sup></div>
 									</div>
 								</div>
 								<!-- END -->
@@ -377,8 +220,8 @@ $filter = [
 						</div>
 					</div>
 				</div>
-				<div class="col-md-5 d-flex align-items-stretch ftco-animate">
-					<div class="img w-100" style="background-image: url(images/pcmag.jpg);"></div>
+				<div class="col-md-5 d-flex align-items-stretch">
+					<div class="img w-100" style="background-image: url(images/Cloud1.png);"></div>
 				</div>
 			</div>
 		</div>
@@ -471,6 +314,92 @@ $filter = [
 	
 
 
+	<!-- Start Contact Section -->
+	<section class="ftco-section contact-section" id="contact">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-4 heading-section text-center ftco-animate">
+					<h2 class="mb-4">Contactactanos </h2>
+					<p>Contactanos por cualquier medio disponible.</p>
+				</div>
+			</div>
+
+			<div class="row mb-5">
+				<div class="col-md-3 d-flex ftco-animate">
+					<div class="align-self-stretch box text-center p-4">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-map-signs"></span>
+						</div>
+						<div>
+							<h3 class="mb-4">Dirección</h3>
+							<p>empresa ubicada en La Serena-Región de coquimbo</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex ftco-animate">
+					<div class="align-self-stretch box text-center p-4">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-phone2"></span>
+						</div>
+						<div>
+							<h3 class="mb-4">N° de Contacto </h3>
+							<p><a href="#">+ 1235 2355 98</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex ftco-animate">
+					<div class="align-self-stretch box text-center p-4">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-paper-plane"></span>
+						</div>
+						<div>
+							<h3 class="mb-4">Dirección de Email</h3>
+							<p><a href="#">info@yoursite.com</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex ftco-animate">
+					<div class="align-self-stretch box text-center p-4">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-globe"></span>
+						</div>
+						<div>
+							<h3 class="mb-4">Website</h3>
+							<p><a href="#">iDynatron.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row block-9">
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Tu Nombre">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder=" Email">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Asunto">
+						</div>
+						<div class="form-group">
+							<textarea name="" id="" cols="30" rows="7" class="form-control"
+								placeholder="Mensaje"></textarea>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5">
+						</div>
+					</form>
+				</div>
+
+				<div class="col-md-6 d-flex align-items-stretch">
+					<div id="map"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Contact Section -->
 
 
 	<!-- Start Footer Section -->
