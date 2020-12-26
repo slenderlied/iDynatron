@@ -56,6 +56,26 @@
 
 
 
+					<div class="container">
+		
+		<img src="images/Cloud3.png" alt="" style="width:70%" class="mx-auto d-block">
+		
+	  </div>
+     
+	  <div class="form-group text-center mt-4">
+	  <form action="/tcoservidores">
+	  <input type="submit" value="Calculadora TCO" class="btn btn-primary py-3 px-5">
+
+	
+		
+						
+      </form>	
+	</div>
+	 
+
+
+
+
 	<!-- Start Services Section -->
 	<section id="services" class="ftco-section">
 		<div class="container">

@@ -76,7 +76,7 @@ $filter = [
 <html lang="en">
 
 <head>
-	<title>iDynatron</title>
+	<title>iDynatron - Resultados Consulta</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -217,8 +217,25 @@ $filter = [
 
 
 
+     
+	  <div class="form-group text-center mt-4">
+	  <form action="/cloudinformacion">
+		<input type="submit" value="Ver Más" class="btn btn-primary py-3 px-5">
+      </form>	
+	</div>
+	 
 
 
+
+    <div id="notices">
+        <div>Informe:</div>
+        <div class="notice">
+          <form action="/pdf" method="get">   
+          <?php echo "<button type='input' class='btn btn-outline-dark'>Ver Informe PDF</button>";?> 
+          <input type="hidden" name="fecha" value="<?php echo $fechafilter ?>">
+          </form> 
+        </div>
+      </div>
 
 
 
@@ -356,7 +373,7 @@ $filter = [
 					</div>
 				</div>
 				<div class="col-md-5 d-flex align-items-stretch">
-					<div class="img w-100" style="background-image: url(images/Cloud1.png);"></div>
+					<div class="img w-100" style="background-image: url(images/pcmag.jpg);"></div>
 				</div>
 			</div>
 		</div>

@@ -141,7 +141,7 @@ $filter = [
 					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
                     <div class="form-group">
 					<p style="font-size: 10px;"  ></p>
-                    <h2 class="mb-4 text-center">Modificar Perfil</h2>
+                    <h2 class="mb-4 text-center"> <a href="/modificarusuario">Modificar Perfil</a> </h2>
 					</div>
 					</form>
 				</div>
