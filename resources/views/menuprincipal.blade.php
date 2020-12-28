@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-	<title>iDynatron - Menú</title>
+	<title>DynaCloud - Menú</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link rel="icon" type="image/png" href="images/AT-pro-logo.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
 
@@ -72,322 +72,62 @@
       </form>	
 	</div>
 	 
-
-
-
-
-	<!-- Start Services Section -->
-	<section id="services" class="ftco-section">
+	<section class="ftco-section contact-section p-2 align-content-center" id="contact">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-9">
-					<div class="row">
-						<div class="col-md-5 heading-section ftco-animate pb-5">
-							<h2 class="mb-4">Servicios Cloud</h2>
-							<p>Empresas de todos los sectores y de distintos tamaños apuestan cada día con mayor
-								decisión por el Cloud</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="media block-6 services d-block ftco-animate">
-								<div class="icon"><span class="fas fa-cloud"></span></div>
-								<div class="media-body">
-									<h3 class="heading mb-3">Menor coste y mayor rentabilidad.</h3>
-									<p> Invertir en la compra de equipos y centros de datos es cosa del pasado. El Cloud
-										Computing es más rentable porque las empresas ya no deben gastar grandes
-										cantidades de dinero en la puesta en marcha de un centro de datos.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="media block-6 services d-block ftco-animate">
-								<div class="icon"><span class="fas fa-cloud-download-alt"></span></div>
-								<div class="media-body">
-									<h3 class="heading mb-3">Adiós al mantenimiento.</h3>
-									<p> Hasta la llegada del Cloud, las empresas se veían obligadas a dedicar tiempo y
-										recursos económicos para la reparación de equipos que han sufrido problemas de
-										funcionamiento
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="media block-6 services d-block ftco-animate">
-								<div class="icon"><span class="fab fa-cloudversify"></span></div>
-								<div class="media-body">
-									<h3 class="heading mb-3">Movilidad y acceso desde cualquier lugar.</h3>
-									<p>Y desde cualquier dispositivo. La información de la empresa deja de estar sólo en
-										la oficina y da paso a la movilidad, tanto para trabajar como para atender a
-										diferentes clientes. Esto repercute en una mayor flexibilidad y movilidad
-										laboral.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex align-items-stretch">
-					<div class="img w-100" style="background-image: url(images/Cloud2.png);"></div>
-				</div>
-			</div>
-			<div class="row progress-circle pt-md-5">
-				<div class="col-md-7 order-md-last py-md-5">
-					<div class="row">
-						<div class="col-md-4 mb-md-0 mb-4 ftco-animate">
-							<div class="">
-								<h2 class="text-center mb-4">Eficiencia</h2>
 
-								<!-- Progress bar 1 -->
-								<div class="progress mx-auto" data-value='90'>
-									<span class="progress-left">
-										<span class="progress-bar border-primary"></span>
-									</span>
-									<span class="progress-right">
-										<span class="progress-bar border-primary"></span>
-									</span>
-									<div
-										class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-										<div class="h5">90<sup class="small">%</sup></div>
-									</div>
-								</div>
-								<!-- END -->
-							</div>
-						</div>
-
-						<div class="col-md-4 mb-md-0 mb-4 ftco-animate">
-							<div class="">
-								<h2 class="text-center mb-4">Desarrollo</h2>
-
-								<!-- Progress bar 1 -->
-								<div class="progress mx-auto" data-value='80'>
-									<span class="progress-left">
-										<span class="progress-bar border-primary"></span>
-									</span>
-									<span class="progress-right">
-										<span class="progress-bar border-primary"></span>
-									</span>
-									<div
-										class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-										<div class="h5">80<sup class="small">%</sup></div>
-									</div>
-								</div>
-								<!-- END -->
-							</div>
-						</div>
-
-						<div class="col-md-4 mb-md-0 mb-4 ftco-animate">
-							<div class="">
-								<h2 class="text-center mb-4">Producción</h2>
-
-								<!-- Progress bar 1 -->
-								<div class="progress mx-auto" data-value='75'>
-									<span class="progress-left">
-										<span class="progress-bar border-primary"></span>
-									</span>
-									<span class="progress-right">
-										<span class="progress-bar border-primary"></span>
-									</span>
-									<div
-										class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-										<div class="h5">75<sup class="small">%</sup></div>
-									</div>
-								</div>
-								<!-- END -->
-							</div>
-						</div>
-
-						<div class="p-md-4 mt-4">
-							<div class="col-md-8 ftco-animate">
-								<p>Cloud son tecnologías que habilita al usuario el consumo de servicios pagando solo
-									por lo que se consume, de forma escalable, elástica, flexible y por medio de un
-									portal de auto aprovisionamiento. Escalabilidad y Elasticidad</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-5 d-flex align-items-stretch">
-					<div class="img w-100" style="background-image: url(images/Cloud1.png);"></div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Services Section -->
-	<div class="container">
-		
-		<img src="images/Cloud3.png" alt="" style="width:70%" class="mx-auto d-block">
-		
-	  </div>
-     
-	  <div class="form-group text-center mt-4">
-	  <form action="/cloudinformacion">
-		<input type="submit" value="Ver Más" class="btn btn-primary py-3 px-5">
-      </form>	
-	</div>
-	 
-
-
-	<section class="ftco-section testimony-section" id="testimonial">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-4 heading-section ftco-animate">
-					<span class="subheading">iDynatron</span>
-					<h2 class="mb-4">Desarrolladores</h2>
-					<p>creando nuevas oportunidades para empresas sobre tecnologias.</p>
-				</div>
-			</div>
-			<div class="row ftco-animate">
-				<div class="col-md-12">
-					<div class="carousel-testimony owl-carousel">
-						<div class="item">
-							<div class="testimony-wrap p-4 pb-5">
-								<div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
-									<span class="quote d-flex align-items-center justify-content-center">
-										<i class="icon-quote-left"></i>
-									</span>
-								</div>
-								<div class="text">
-									<p class="mb-5 pl-4 line">Lorem ipsum dolor sit amet consectetur adipisicing elit. In et asperiores nobis deserunt, fuga cupiditate quos modi, beatae, quidem laudantium iste a neque. Ducimus amet ex laborum, porro nulla ipsa.</p>
-									<div class="pl-5">
-										<p class="name">Marcelo Villarroel</p>
-										<span class="position">Desarrollador</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap p-4 pb-5">
-								<div class="user-img mb-4" style="background-image: url(images/person_2.jpg)">
-									<span class="quote d-flex align-items-center justify-content-center">
-										<i class="icon-quote-left"></i>
-									</span>
-								</div>
-								<div class="text">
-									<p class="mb-5 pl-4 line">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sint necessitatibus aliquam magnam vitae culpa beatae praesentium, qui voluptatibus excepturi dolorem repellendus iusto nesciunt quod! Eius minus repellendus maxime modi.</p>
-									<div class="pl-5">
-										<p class="name">Alejandro Rojas</p>
-										<span class="position">Desarrollador</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap p-4 pb-5">
-								<div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
-									<span class="quote d-flex align-items-center justify-content-center">
-										<i class="icon-quote-left"></i>
-									</span>
-								</div>
-								<div class="text">
-									<p class="mb-5 pl-4 line">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit voluptatibus consectetur rerum eaque ipsam tenetur dicta laboriosam possimus odio, laudantium minus tempora vero perferendis ipsa quas porro voluptatum delectus rem.</p>
-									<div class="pl-5">
-										<p class="name">Diego olivares</p>
-										<span class="position">Desarrollador</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-
-		
-	
-
-
-	<!-- Start Contact Section -->
-	<section class="ftco-section contact-section" id="contact">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-4 heading-section text-center ftco-animate">
-					<h2 class="mb-4">Contactactanos </h2>
-					<p>Contactanos por cualquier medio disponible.</p>
-				</div>
-			</div>
-
-			<div class="row mb-5">
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Dirección</h3>
-							<p>empresa ubicada en La Serena-Región de coquimbo</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">N° de Contacto </h3>
-							<p><a href="#">+ 1235 2355 98</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Dirección de Email</h3>
-							<p><a href="#">info@yoursite.com</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Website</h3>
-							<p><a href="#">iDynatron.com</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<div class="row block-9">
 				<div class="col-md-6 ftco-animate">
 					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Tu Nombre">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder=" Email">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Asunto">
-						</div>
-						<div class="form-group">
-							<textarea name="" id="" cols="30" rows="7" class="form-control"
-								placeholder="Mensaje"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5">
-						</div>
+                    <div class="form-group">
+					<p style="font-size: 10px;"></p>
+                    <h2 class="mb-4 text-center"> <a href="/modificarusuario">Calculadora TCO</a> </h2>
+					</div>
 					</form>
 				</div>
 
-				<div class="col-md-6 d-flex align-items-stretch">
-					<div id="map"></div>
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+					<p style="font-size: 10px;"  ></p>
+                    <h2 class="mb-4 text-center"> <a href="/modificarusuario">Modificar Perfil</a> </h2>
+					</div>
+					</form>
+				</div>
+		
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="ftco-section contact-section p-2" id="contact">
+		<div class="container">
+
+
+			<div class="row block-9">
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+					<p style="font-size: 10px;"  ></p>
+                    <h2 class="mb-4 text-center"> <a href="/modificarusuario">Modificar Perfil</a> </h2>
+					</div>
+					</form>
+				</div>
+
+				
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+					<p style="font-size: 10px;"  ></p>	
+                    <h2 class="mb-4 text-center"><a href="/mejorarcuenta">Mejorar Cuenta</a> </h2>
+					</div>
+						
+					</form>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- End Contact Section -->
-
 
 	<!-- Start Footer Section -->
 	<footer class="ftco-footer py-5">

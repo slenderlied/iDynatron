@@ -1,7 +1,18 @@
+<?php
+include ("database/mongodb.php");
+include ("security/seguridadnologin.php");
+
+echo $fechafilter = $_GET["fecha"];
+$fechatitulo = substr($fechafilter,0,10);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ATPro Admin</title>
+	<title>DynaCloud - Dashboard </title>
 
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="icon" type="image/png" href="images/AT-pro-logo.png"/>
@@ -9,11 +20,11 @@
 	
 	<!-- Import lib -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
-	<link rel="stylesheet" type="text/css" href="font/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/fontawesome-free/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<!-- End import lib -->
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="fonts/fontawesome-free/css/style.css">
 </head>
 <body class="overlay-scrollbar">
 	<!-- navbar -->
@@ -48,7 +59,7 @@
 			<li class="nav-item dropdown">
 				<a class="nav-link">
 					<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
-					<span class="navbar-badge">15</span>
+					<span class="navbar-badge"></span>
 				</a>
 				<ul id="notification-menu" class="dropdown-menu notification-menu">
 					<div class="dropdown-menu-header">

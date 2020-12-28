@@ -48,7 +48,7 @@ if(isset($_SESSION['correo'])){
 <html lang="en">
 
 <head>
-	<title>iDynatron</title>
+	<title>DynaCloud</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -133,64 +133,34 @@ if(isset($_SESSION['correo'])){
 		 <input type="submit" value="Busqueda service Cloud" class="btn btn-primary py-3 px-5">
 	</div>
 
-
- 
-	<!-- Start Contact Section -->
-	<section class="ftco-section contact-section" id="contact">
+	<section class="ftco-section contact-section p-2" id="contact">
 		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-4 heading-section text-center ftco-animate">
-					<h2 class="mb-4">Contactactanos </h2>
-					<p>Contactanos por cualquier medio disponible.</p>
-				</div>
-			</div>
 
-			<div class="row mb-5">
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Dirección</h3>
-							<p>empresa ubicada en La Serena-Región de coquimbo</p>
-						</div>
+			<div class="row block-9">
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+					<p style="font-size: 10px;"  ></p>
+                    <h2 class="mb-4 text-center"> <a href="/modificarusuario">Modificar Perfil</a> </h2>
 					</div>
+					</form>
 				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">N° de Contacto </h3>
-							<p><a href="#">+ 1235 2355 98</a></p>
-						</div>
+
+				
+				<div class="col-md-6 ftco-animate">
+					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
+                    <div class="form-group">
+					<p style="font-size: 10px;"  ></p>	
+                    <h2 class="mb-4 text-center"><a href="/mejorarcuenta">Mejorar Cuenta</a> </h2>
 					</div>
-				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Dirección de Email</h3>
-							<p><a href="#">info@yoursite.com</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Website</h3>
-							<p><a href="#">iDynatron.com</a></p>
-						</div>
-					</div>
+						
+					</form>
 				</div>
 			</div>
+		</div>
+	</section>
+ 
+	
 
 	<!-- Start Footer Section -->
 	<footer class="ftco-footer py-5">

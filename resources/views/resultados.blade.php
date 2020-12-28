@@ -42,12 +42,12 @@ $filter = [
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Resultado TCO </title>
+    <title>DynaCloud - Resultado TCO </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/css/style1.css" media="all" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-
+    <link rel="icon" type="image/png" href="images/AT-pro-logo.png"/>
 
   </head>
   <body>

@@ -26,10 +26,10 @@ $filter = [
 <html lang="en">
 
 <head>
-	<title>iDynatron - Pefil Usuario</title>
+	<title>DynaCloud - Pefil Usuario</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link rel="icon" type="image/png" href="images/AT-pro-logo.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
 
@@ -151,7 +151,7 @@ $filter = [
 					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
                     <div class="form-group">
 					<p style="font-size: 10px;"  ></p>	
-                    <h2 class="mb-4 text-center"><a href="consultasservidoresusuario">Consultas Servidores</a> </h2>
+                    <h2 class="mb-4 text-center"><a href="/mejorarcuenta">Mejorar Cuenta</a> </h2>
 					</div>
 						
 					</form>

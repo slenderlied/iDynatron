@@ -15,10 +15,10 @@ $cursor = $manager->executeQuery($dbname4, $query);
 <html lang="en">
 
 <head>
-	<title>iDynatron - TCO</title>
+	<title>DynaCloud - TCO</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link rel="icon" type="image/png" href="images/AT-pro-logo.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
 
@@ -62,7 +62,7 @@ $cursor = $manager->executeQuery($dbname4, $query);
 	</nav>
 	<!-- End Nav Section -->
     <div class="text text-center ftco-animate">
-						<h1 class="logo "><span class="flaticon-camera-shutter"></span> DynaCloud</a></h1>
+						<h1 class="logo"><span class="flaticon-camera-shutter"></span> DynaCloud</a></h1>
 						<h1 class="mb-3"><i>TCO - Consulta Gastos</i></h1>
 					</div>
 

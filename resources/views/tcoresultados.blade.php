@@ -4,7 +4,7 @@ include ("security/seguridadnologin.php");
  $fechafilter = $_GET["fecha"];
  $idrandom = $_GET["idrandom"];
 $correo=$_SESSION['correo'];
-$dolar= 750;
+$dolar= 800;
 $filter = [
   'correo' => $correo
   ];
@@ -81,10 +81,10 @@ $filter = [
 <html lang="en">
 
 <head>
-	<title>iDynatron - Resultados Consulta</title>
+	<title>DynaCloud - Resultados Consulta</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link rel="icon" type="image/png" href="images/AT-pro-logo.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
 
@@ -237,13 +237,24 @@ $filter = [
         <div class="notice">
           <form action="/pdf" method="get">   
           <?php echo "<button type='input' class='btn btn-outline-dark'>Ver Informe PDF</button>";?> 
-          <input type="hidden" name="fecha" value="<?php echo $fechafilter ?>">
+          <input type="hidden" name="fecha" value="<?php echo $fechafilter  ?>">
+		  <input type="hidden" name="idrandom" value="<?php echo $idrandom  ?>">
+
           </form> 
         </div>
       </div>
 
 
 
+	  <div id="notices">
+        <div>Dashboard:</div>
+        <div class="notice">
+          <form action="/dashboard" method="get">   
+          <?php echo "<button type='input' class='btn btn-outline-dark'>Ver Dashboard</button>";?> 
+          <input type="hidden" name="fecha" value="<?php echo $fechafilter ?>">
+          </form> 
+        </div>
+      </div>
 
 
 	<!-- Start Services Section -->
