@@ -99,7 +99,7 @@ echo "<br>";
 
 // Cloud \\
 $cursor3 = $manager->executeQuery($dbname6, $query);
-$maquinarandom = rand(1, 8);
+$maquinarandom = rand(1, 50);
 $horasmes = "730";
 $i= 0;
 
@@ -108,11 +108,11 @@ foreach ($cursor3 as $maquina ) {
     if ($maquinarandom == $i) {
       $nombremaquina = $maquina -> nombrevirtualmachine;
      echo "<br>";
-    $costoporhora = str_replace(',','.',$maquina -> usoporhora); 
+     echo $costoporhora = str_replace(',','.',$maquina -> usoporhora); 
     }
     $i = $i + 1;
 }
-
+echo "<br>";
 echo $cloudproducto = round($horasmes * $costoporhora);
 echo "<br>";
 //--\\
@@ -152,9 +152,9 @@ foreach ($cursor5 as $red) {
        echo $precioredalmacenamiento = round(($precioalmacenamiento)+($redusodigitada*$preciored));
     }
 }
-
+echo "<br>";
 //Suma Total Cloud\\
-$sumatotalcloud = $cloudproducto + $costopersonalcloud + $precioalmacenamiento + $precioredalmacenamiento;
+echo $sumatotalcloud = $cloudproducto + $costopersonalcloud + $precioalmacenamiento + $precioredalmacenamiento;
 $sumatotalcloudaños = $sumatotalcloud * 5;
 
 //--\\

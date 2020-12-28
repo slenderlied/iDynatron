@@ -50,18 +50,27 @@ $filter = [
 
   //Cloud\\
   $sumcloud = $row -> Suma_Total_Cloud;
-
+  $cloudproducto = $row -> Producto_Cloud;
+  $costopersonalcloud = $row -> Costo_Personal_Cloud;
+  $precioalmacenamiento = $row -> Costo_Almacenamiento_Cloud;
+  $precioredalmacenamiento = $row -> Costo_Red_Cloud;
   //--\\
   //Conversión Precio Dolar a Pesos Chilenos\\
   //On Premise\\ 
   $clpsumtotmes= $sumtotmes*$dolar;
-
-
+  $clpcostopersonalti = $costopersonalti * $dolar;
+  $clphardpremi = $hardpremi * $dolar;
+  $clpelecpremi = $elecpremi * $dolar;
+  $clpsoftpremi = $softpremi * $dolar;
+  $clredepremi = $redepremi * $dolar;
+  $clpmanteremi = $manteremi * $dolar;
   //--\\
   //Cloud\\
-
   $clpsumcloud= $sumcloud*$dolar;
-
+  $clpcloudproducto = $cloudproducto*$dolar;
+  $clpcostopersonalcloud = $costopersonalcloud*$dolar;
+  $clpprecioalmacenamiento = $precioalmacenamiento*$dolar;
+  $clpprecioredalmacenamiento = $precioredalmacenamiento*$dolar;
   //--\\
 
   //Consultas Cloud - On Premise\\
@@ -71,12 +80,7 @@ $filter = [
 }
 }
 
-
-
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -109,7 +113,8 @@ $filter = [
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 	<script src="https://kit.fontawesome.com/5ef377022b.js" crossorigin="anonymous"></script>
 </head>
 
@@ -135,6 +140,13 @@ $filter = [
 						<h1 class="logo "><span class="flaticon-camera-shutter"></span> DynaCloud</a></h1>
 						<h1 class="mb-3"><i>Resultado Servidores</i></h1>
 					</div>
+
+
+					<canvas id="myChart" style="height:20vh; width:40vw"></canvas>
+
+
+
+
 
 	<!-- Start Contact Section -->
 	<section class="ftco-section contact-section p-2" id="contact">
@@ -193,13 +205,16 @@ $filter = [
 					</div>
 						<div class="form-group">
                         <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Personal TI: $<?php echo number_format($clpcostopersonalti, 0, ",", ".");  ?></p>
+						<p style="font-size: 20px;">Gasto Electricidad: $<?php echo number_format($clpelecpremi, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Hardware: $<?php echo number_format($clphardpremi, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Software: $<?php echo number_format($clpsoftpremi, 0, ",", ".");  ?></p>
+						<p style="font-size: 20px;">Gasto Redes: $<?php echo number_format($clredepremi, 0, ",", ".");  ?></p>
+						<p style="font-size: 20px;">Gasto Mantención Redes: $<?php echo number_format($clpmanteremi, 0, ",", ".");  ?></p>
 						</div>
 					</form>
 				</div>
-
+				
 				<div class="col-md-6 ftco-animate">
 					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
                     <div class="form-group">
@@ -207,11 +222,11 @@ $filter = [
 					</div>
 						<div class="form-group">
                         <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumcloud, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
-                        <p style="font-size: 20px;">Gasto Total: $<?php echo number_format($clpsumtotmes, 0, ",", ".");  ?></p>
+						<p style="font-size: 20px;">Gasto Producto Cloud: $<?php echo number_format($clpcloudproducto, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Personal Cloud: $<?php echo number_format($clpcostopersonalcloud, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Almacenamiento Cloud: $<?php echo number_format($clpprecioalmacenamiento, 0, ",", ".");  ?></p>
+                        <p style="font-size: 20px;">Gasto Red Cloud: $<?php echo number_format($clpprecioredalmacenamiento, 0, ",", ".");  ?></p>
 						</div>
-						
 					</form>
 				</div>
 			</div>
@@ -477,7 +492,96 @@ $filter = [
 	</section>
 	
 
-		
+	<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [<?php echo $sumtotcin ?>, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+var ctx = document.getElementById('myChart1').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options
+});
+// And for a doughnut chart
+var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+    options: options
+});
+</script>	
 	
 
 
