@@ -37,6 +37,10 @@ Route::get('menuprincipal', function () {
     return view('menuprincipal');
 });
 
+Route::get('servidoresusuarios', function () {
+    return view('servidoresusuarios');
+});
+
 Route::get('perfilusuario', function () {
     return view('perfilusuario');
 });

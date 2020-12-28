@@ -40,6 +40,7 @@ $filter = [
    $fechavalidator = $row -> Fecha_Validator;
    $correovalidator = $row -> Correo_Usuario;
   if ($idrandom == $idvalidator && $fechafilter == $fechavalidator && $correo == $correovalidator) {
+    $nombreservidor = $row -> Nombre_Servidor;
     //On Premise\\ 
   $costopersonalti = $row -> Costo_Personal_TI_Premise;
   $hardpremi = $row -> Hardware_Premise;
@@ -87,7 +88,7 @@ $filter = [
   <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="images/AT-pro-logo.png"/>
-    <title>DynaCloud - Informe TCO <?php echo $fechafilter ?> </title>
+    <title>DynaCloud - Informe TCO <?php echo $nombreservidor ?> </title>
     <link rel="stylesheet" href="css/css/style.css" media="all" />
 
 
@@ -97,7 +98,7 @@ $filter = [
       <div id="logo">
       <img src="images\baseline_camera_black_18dp.png" alt="">
       </div>
-      <h1>Informe TCO <?php echo $fechatitulo ?></h1>
+      <h1>| Informe TCO | <?php echo $nombreservidor ?> |</h1>
       <div id="company" class="clearfix">
         <div>Organización</div>
         <div>455 Foggy Heights,<br /> AZ 85004, US</div>

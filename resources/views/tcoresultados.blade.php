@@ -35,6 +35,7 @@ $filter = [
    $fechavalidator = $row -> Fecha_Validator;
    $correovalidator = $row -> Correo_Usuario;
   if ($idrandom == $idvalidator && $fechafilter == $fechavalidator && $correo == $correovalidator) {
+	$nombreservidor = $row -> Nombre_Servidor;
     //On Premise\\ 
   $costopersonalti = $row -> Costo_Personal_TI_Premise;
   $hardpremi = $row -> Hardware_Premise;
@@ -143,22 +144,21 @@ $filter = [
 				<div class="col-md-3 d-flex ftco-animate">
 					<div class="align-self-stretch box text-center p-4">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-user-circle"></span>
+							
 						</div>
 						<div>
-							<h5 class="mb-4">Usuario</h5>
-							<p style="font-size: 18px;"  ><?php echo $nombreusua ?> <?php echo $apeusua?></p>
+
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex ftco-animate">
 					<div class="align-self-stretch box text-center p-4">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="far fa-envelope"></span>
+							<span class="fas fa-server"></i></span>
 						</div>
 						<div>
-							<h5 class="mb-4">Correo Usuario</h5>
-							<p style="font-size: 18px;"><?php echo $correousua ?></p>
+						<h5 class="mb-4">Usuario</h5>
+							<p style="font-size: 18px;"  ><?php echo $nombreusua ?> <?php echo $apeusua?></p>
 						</div>
 					</div>
 				</div>
@@ -168,19 +168,18 @@ $filter = [
 							<span class="far fa-building"></span>
 						</div>
 						<div>     
-							<h5 class="mb-4">Organización</h5>
-							<p style="font-size: 18px;"><?php echo $orgausua ?></p>
+						<h5 class="mb-4">Nombre Servidor</h5>
+							<p style="font-size: 18px;"><?php echo $nombreservidor ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex ftco-animate">
 					<div class="align-self-stretch box text-center p-4">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="far fa-address-card"></span>
+						
 						</div>
 						<div>
-							<h5 class="mb-4">Tipo Cuenta</h5>
-							<p style="font-size: 18px;"><?php echo $tipousua ?></p>
+	
 						</div>
 					</div>
 				</div>

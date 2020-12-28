@@ -61,15 +61,7 @@
 		<img src="images/Cloud3.png" alt="" style="width:70%" class="mx-auto d-block">
 		
 	  </div>
-     
-	  <div class="form-group text-center mt-4">
-	  <form action="/tcoservidores">
-	  <input type="submit" value="Calculadora TCO" class="btn btn-primary py-3 px-5">
-
-	
-		
-						
-      </form>	
+     <h1></h1>
 	</div>
 	 
 	<section class="ftco-section contact-section p-2 align-content-center" id="contact">
@@ -81,7 +73,7 @@
 					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
                     <div class="form-group">
 					<p style="font-size: 10px;"></p>
-                    <h2 class="mb-4 text-center"> <a href="/modificarusuario">Calculadora TCO</a> </h2>
+                    <h2 class="mb-4 text-center"> <a href="/tcoservidores">Calculadora TCO</a> </h2>
 					</div>
 					</form>
 				</div>
@@ -90,7 +82,7 @@
 					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
                     <div class="form-group">
 					<p style="font-size: 10px;"  ></p>
-                    <h2 class="mb-4 text-center"> <a href="/modificarusuario">Modificar Perfil</a> </h2>
+                    <h2 class="mb-4 text-center"> <a href="/servidoresusuarios">Servidores Usuario</a> </h2>
 					</div>
 					</form>
 				</div>
@@ -100,34 +92,6 @@
 	</section>
 
 
-
-	<section class="ftco-section contact-section p-2" id="contact">
-		<div class="container">
-
-
-			<div class="row block-9">
-				<div class="col-md-6 ftco-animate">
-					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
-                    <div class="form-group">
-					<p style="font-size: 10px;"  ></p>
-                    <h2 class="mb-4 text-center"> <a href="/modificarusuario">Modificar Perfil</a> </h2>
-					</div>
-					</form>
-				</div>
-
-				
-				<div class="col-md-6 ftco-animate">
-					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
-                    <div class="form-group">
-					<p style="font-size: 10px;"  ></p>	
-                    <h2 class="mb-4 text-center"><a href="/mejorarcuenta">Mejorar Cuenta</a> </h2>
-					</div>
-						
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<!-- Start Footer Section -->
 	<footer class="ftco-footer py-5">

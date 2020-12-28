@@ -75,10 +75,12 @@ $cursor = $manager->executeQuery($dbname4, $query);
 					<div class="row">
 						<div class="col-md-5 heading-section ftco-animate pb-1">
 							<h1 class="mb-4">Servidores</h1>
-							<h2 class="mb-4" style="font-size: 20px;">Servidor</h2>
+							<h2 class="mb-4" style="font-size: 20px;">Servidor </h2>
+							<input type="text" class="form-control" placeholder="Nombre Servidor" name="nombreservidor" maxlength="30">
+							<h2></h2>
 						</div>
                     </div>
-                    
+
 					<div class="row">
 						<div class="col-md-6">
 							<div class="media block-4 services d-block ftco-animate">
@@ -102,8 +104,6 @@ $cursor = $manager->executeQuery($dbname4, $query);
 								</div>
 							</div>
                         </div>
-
-
 								</div>
 							</div>
                         </div>

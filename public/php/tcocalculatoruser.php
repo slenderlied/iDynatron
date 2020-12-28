@@ -7,6 +7,8 @@ session_start();
 $bulk = new MongoDB\Driver\BulkWrite;
 $usuario = $_SESSION["correo"];
 
+$nombreservidor = $_POST["nombreservidor"];
+
 $hardware = $_POST["nombrehardware"];
 
 $idrandom = rand(1, 999999);
@@ -164,6 +166,7 @@ $sumatotalcloudaños = $sumatotalcloud * 5;
             'Correo_Usuario' => $usuario,
             'Fecha_Validator' => $fecha,
             'Id_Validator' => $idrandom,
+            'Nombre_Servidor'=> $nombreservidor,
             'Costo_Personal_TI_Premise' => $costopersonal,
             'Hardware_Premise' => $costohardwaretotal,
             'Software_Premise' => $costosoftaretotal,
