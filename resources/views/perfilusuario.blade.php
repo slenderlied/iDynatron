@@ -78,7 +78,7 @@ $filter = [
 
 
     <div class="text text-center ftco-animate">
-						<h1 class="logo "><span class="flaticon-camera-shutter"></span> DynaCloud</a></h1>
+						<h1 class="logo "><span class="flaticon-camera-shutter"></span>DynaCloud</a></h1>
 						<h1 class="mb-3"><i>Perfil Usuario</i></h1>
 					</div>
 					<div class=" text-center p-4 pb-5 mb-5 ftco-animate">

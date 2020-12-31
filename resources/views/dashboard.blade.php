@@ -2,8 +2,84 @@
 include ("database/mongodb.php");
 include ("security/seguridadnologin.php");
 
-echo $fechafilter = $_GET["fecha"];
+$fechafilter = $_GET["fecha"];
 $fechatitulo = substr($fechafilter,0,10);
+
+$idrandom = $_GET["idrandom"];
+$correo=$_SESSION['correo'];
+$dolar= 800;
+$filter = [
+  'correo' => $correo
+  ];
+
+  $query1 = new MongoDB\Driver\Query($filter);
+  $cursor1 = $manager1->executeQuery($dbname, $query1);
+
+  foreach ($cursor1 as $row1) {
+    $nombreusua = $row1 -> nombre;
+    $apeusua = $row1 -> apellido;
+    $correousua = $row1 -> correo;
+    $orgausua = $row1 -> organizacion;
+	$tipousua = $row1 -> tipoUsuario;
+	$fotousu = $row1 -> foto;
+  }
+
+  $query = new MongoDB\Driver\Query([]);
+
+  $cursor = $manager->executeQuery($dbname10, $query);
+
+  
+    foreach($cursor as $row){
+   $idvalidator = $row -> Id_Validator;
+   $fechavalidator = $row -> Fecha_Validator;
+   $correovalidator = $row -> Correo_Usuario;
+  if ($idrandom == $idvalidator && $fechafilter == $fechavalidator && $correo == $correovalidator) {
+    $nombreservidor = $row -> Nombre_Servidor;
+    //On Premise\\ 
+  $costopersonalti = $row -> Costo_Personal_TI_Premise;
+  $hardpremi = $row -> Hardware_Premise;
+  $softpremi = $row -> Software_Premise;
+  $elecpremi = $row -> Electricidad_Premise;
+  $redepremi = $row -> Redes_Premise;
+  $manteremi = $row -> Mantencion_Redes_Premise;
+  $sumtotmes = $row -> Suma_Total_Premise;
+  $sumtotcin = $row -> Suma_Total_Premise_5;
+  //--\\
+ 
+  //Cloud\\
+  $sumcloud = $row -> Suma_Total_Cloud;
+  $cloudproducto = $row -> Producto_Cloud;
+  $costopersonalcloud = $row -> Costo_Personal_Cloud;
+  $precioalmacenamiento = $row -> Costo_Almacenamiento_Cloud;
+  $precioredalmacenamiento = $row -> Costo_Red_Cloud;
+  //--\\
+  //Conversión Precio Dolar a Pesos Chilenos\\
+  //On Premise\\ 
+  $clpsumtotmes= $sumtotmes*$dolar;
+  $clpcostopersonalti = $costopersonalti * $dolar;
+  $clphardpremi = $hardpremi * $dolar;
+  $clpelecpremi = $elecpremi * $dolar;
+  $clpsoftpremi = $softpremi * $dolar;
+  $clredepremi = $redepremi * $dolar;
+  $clpmanteremi = $manteremi * $dolar;
+  //--\\
+  //Cloud\\
+  $clpsumcloud= $sumcloud*$dolar;
+  $clpcloudproducto = $cloudproducto*$dolar;
+  $clpcostopersonalcloud = $costopersonalcloud*$dolar;
+  $clpprecioalmacenamiento = $precioalmacenamiento*$dolar;
+  $clpprecioredalmacenamiento = $precioredalmacenamiento*$dolar;
+  //--\\
+
+  //Consultas Cloud - On Premise\\
+  $dif1 = (($clpsumtotmes - $clpsumcloud)/100) ;
+  //--\\
+
+}
+}
+
+
+
 
 
 
@@ -37,8 +113,8 @@ $fechatitulo = substr($fechafilter,0,10);
 				</a>
 			</li>
 			<li class="nav-item">
-				<img src="images/AT-pro-black.png" alt="ATPro logo" class="logo logo-light">
-				<img src="images/AT-pro-white.png" alt="ATPro logo" class="logo logo-dark">
+				<img src="images\baseline_camera_black_18dp.png" alt="ATPro logo" class="logo logo-light">
+				<img src="images\baseline_camera_white_18dp.png" alt="ATPro logo" class="logo logo-dark">
 			</li>
 		</ul>
 		<!-- end nav left -->
@@ -79,7 +155,7 @@ $fechatitulo = substr($fechafilter,0,10);
 			</li>
 			<li class="nav-item avt-wrapper">
 				<div class="avt dropdown">
-					<img src="images/Monika.gif" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
+					<img src="images/files/<?php echo $fotousu ?>" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
 					<ul id="user-menu" class="dropdown-menu">
 						<li  class="dropdown-menu-item">
 							<a class="dropdown-menu-link">
@@ -322,7 +398,7 @@ $fechatitulo = substr($fechafilter,0,10);
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Poyectado
+							Servidor <?php echo $nombreservidor ?>
 						</h3>
 					</div>
 					<div class="card-content">
@@ -337,5 +413,41 @@ $fechatitulo = substr($fechafilter,0,10);
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 	<script src="js/js/index.js"></script>
 	<!-- end import script -->
+
+	<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+ctx.height = 500
+ctx.width = 500
+var data = {
+	labels: ['Primer Año', 'Segundo Año', 'Tercer Año', 'Cuarto Año', 'Quinto Año'],
+	datasets: [{
+		fill: false,
+		label: 'On-Premise',
+		borderColor: successColor,
+		data: [<?php echo $clpsumtotmes*12?>,<?php echo $clpsumtotmes*24?>, <?php echo $clpsumtotmes*36?>, <?php echo $clpsumtotmes*48?>, <?php echo $clpsumtotmes*60?>],
+		borderWidth: 2,
+		lineTension: 0,
+	}, {
+		fill: false,
+		label: 'Cloud',
+		borderColor: dangerColor,
+		data: [<?php echo $clpsumcloud*12?>, <?php echo $clpsumcloud*24?>, <?php echo $clpsumcloud*36?>, <?php echo $clpsumcloud*48?>, <?php echo $clpsumcloud*60?>],
+		borderWidth: 2,
+		lineTension: 0,
+	}]
+}
+
+var lineChart = new Chart(ctx, {
+	type: 'line',
+	data: data,
+	options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	}
+})
+
+
+    </script>
+
 </body>
 </html>

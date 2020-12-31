@@ -266,6 +266,7 @@ $filter = [
           <form action="/dashboard" method="get">   
           <?php echo "<button type='input' class='btn btn-outline-dark'>Ver Dashboard</button>";?> 
           <input type="hidden" name="fecha" value="<?php echo $fechafilter ?>">
+		  <input type="hidden" name="idrandom" value="<?php echo $idrandom  ?>">
           </form> 
         </div>
       </div>

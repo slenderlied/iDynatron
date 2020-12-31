@@ -2,12 +2,10 @@
 include ("database/mongodb.php");
 include ("security/seguridadnologin.php");
 
-
-
- $fechafilter = $_GET["fecha"];
+$fechafilter = $_GET["fecha"];
 $fechatitulo = substr($fechafilter,0,10);
 
- $idrandom = $_GET["idrandom"];
+$idrandom = $_GET["idrandom"];
 $correo=$_SESSION['correo'];
 $dolar= 800;
 $filter = [
@@ -15,7 +13,6 @@ $filter = [
   ];
 
   $query1 = new MongoDB\Driver\Query($filter);
-
   $cursor1 = $manager1->executeQuery($dbname, $query1);
 
   foreach ($cursor1 as $row1) {
@@ -26,9 +23,6 @@ $filter = [
     $tipousua = $row1 -> tipoUsuario;
 
   }
-
-
-
 
   $query = new MongoDB\Driver\Query([]);
 
@@ -55,24 +49,32 @@ $filter = [
 
   //Cloud\\
   $sumcloud = $row -> Suma_Total_Cloud;
-
+  $cloudproducto = $row -> Producto_Cloud;
+  $costopersonalcloud = $row -> Costo_Personal_Cloud;
+  $precioalmacenamiento = $row -> Costo_Almacenamiento_Cloud;
+  $precioredalmacenamiento = $row -> Costo_Red_Cloud;
   //--\\
   //Conversión Precio Dolar a Pesos Chilenos\\
   //On Premise\\ 
   $clpsumtotmes= $sumtotmes*$dolar;
-
-
+  $clpcostopersonalti = $costopersonalti * $dolar;
+  $clphardpremi = $hardpremi * $dolar;
+  $clpelecpremi = $elecpremi * $dolar;
+  $clpsoftpremi = $softpremi * $dolar;
+  $clredepremi = $redepremi * $dolar;
+  $clpmanteremi = $manteremi * $dolar;
   //--\\
   //Cloud\\
-
   $clpsumcloud= $sumcloud*$dolar;
-
+  $clpcloudproducto = $cloudproducto*$dolar;
+  $clpcostopersonalcloud = $costopersonalcloud*$dolar;
+  $clpprecioalmacenamiento = $precioalmacenamiento*$dolar;
+  $clpprecioredalmacenamiento = $precioredalmacenamiento*$dolar;
   //--\\
 
   //Consultas Cloud - On Premise\\
   $dif1 = (($clpsumtotmes - $clpsumcloud)/100) ;
   //--\\
-
 }
 }
 
