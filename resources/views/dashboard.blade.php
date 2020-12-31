@@ -415,7 +415,7 @@ $filter = [
 	<!-- end import script -->
 
 	<script>
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('myChart');
 ctx.height = 500
 ctx.width = 500
 var data = {
@@ -424,7 +424,7 @@ var data = {
 		fill: false,
 		label: 'On-Premise',
 		borderColor: successColor,
-		data: [<?php echo $clpsumtotmes*12?>,<?php echo $clpsumtotmes*24?>, <?php echo $clpsumtotmes*36?>, <?php echo $clpsumtotmes*48?>, <?php echo $clpsumtotmes*60?>],
+		data: [ <?php echo $clpsumtotmes*12?>,<?php echo $clpsumtotmes*24?>, <?php echo $clpsumtotmes*36?>, <?php echo $clpsumtotmes*48?>, <?php echo $clpsumtotmes*60?>],
 		borderWidth: 2,
 		lineTension: 0,
 	}, {

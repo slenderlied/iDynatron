@@ -90,7 +90,7 @@ $filter = [
   <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="images/AT-pro-logo.png"/>
-    <title>DynaCloud - Informe TCO <?php echo $nombreservidor ?> </title>
+    <title>DynaCloud - Informe TCO </title>
     <link rel="stylesheet" href="css/css/style.css" media="all" />
 
 
@@ -100,7 +100,7 @@ $filter = [
       <div id="logo">
       <img src="images\baseline_camera_black_18dp.png" alt="">
       </div>
-      <h1>| Informe TCO | <?php echo $nombreservidor ?> |</h1>
+      <h1> Informe TCO </h1>
       <div id="company" class="clearfix">
         <div>Organización</div>
         <div>455 Foggy Heights,<br /> AZ 85004, US</div>
@@ -108,55 +108,75 @@ $filter = [
         <div><a href="mailto:company@example.com">company@example.com</a></div>
       </div>
       <div id="project" >
-      <div style="font-size: 15px" ><span>ORGANIZACIÓN</span> <?php echo $orgausua?> </div>
+      <div style="font-size: 15px" ><span>ORG</span> <?php echo $orgausua?> </div>
         <div style="font-size: 15px" ><span>USUARIO</span>  <?php echo $nombreusua?> <?php echo $apeusua ?></div>
         <div style="font-size: 15px" ><span>EMAIL</span>  <?php echo $correousua?></a></div>
         <div style="font-size: 15px" ><span>FECHA</span> <?php echo $fechatitulo?></div>
       </div>
     </header>
     <main>
+
+<h1>On-Premise | <?php echo $nombreservidor ?></h1>
+
       <table>
         <thead>
-          <tr>
+          <tr style="font-size:13px;">
             <th class="service">SERVICE</th>
             <th class="desc">DESCRIPTION</th>
-            <th>PRICE</th>
-            <th>QTY</th>
+            <th>USD</th>
+            <th>CLP</th>
             <th>TOTAL</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="service">Design</td>
+          <tr style="font-size:12px;">
+            <td class="service">Personal TI</td>
             <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
-            <td class="unit">$40.00</td>
-            <td class="qty">26</td>
-            <td class="total">$1,040.00</td>
+            <td class="unit">$<?php echo $costopersonalti?></td>
+            <td class="qty">$<?php echo number_format($clpcostopersonalti, 0, ",", ".");  ?></td>
+            <td class="total">$<?php echo number_format($clpcostopersonalti, 0, ",", ".");  ?></td>
           </tr>
-          <tr>
-            <td class="service">Development</td>
+          <tr style="font-size:12px;">
+            <td class="service">Hardware</td>
             <td class="desc">Developing a Content Management System-based Website</td>
-            <td class="unit">$40.00</td>
-            <td class="qty">80</td>
-            <td class="total">$3,200.00</td>
+            <td class="unit">$<?php echo $hardpremi?></td>
+            <td class="qty">$<?php echo number_format($clphardpremi, 0, ",", ".");  ?></td>
+            <td class="total">$<?php echo number_format($clphardpremi, 0, ",", ".");  ?></td>
           </tr>
-          <tr>
-            <td class="service">Training</td>
+          <tr style="font-size:12px;">
+            <td class="service">Software</td>
             <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
-            <td class="unit">$40.00</td>
+            <td class="unit">$<?php echo $costopersonalti?></td>
             <td class="qty">4</td>
             <td class="total">$160.00</td>
           </tr>
-          <tr>
-            <td colspan="4">SUBTOTAL</td>
+          <tr style="font-size:12px;">
+            <td class="service">Electricidad</td>
+            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="unit">$<?php echo $costopersonalti?></td>
+            <td class="qty">4</td>
+            <td class="total">$160.00</td>
+          </tr>
+          <tr style="font-size:12px;">
+            <td class="service">Redes</td>
+            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="unit">$<?php echo $costopersonalti?></td>
+            <td class="qty">4</td>
+            <td class="total">$160.00</td>
+          </tr>
+          <tr style="font-size:12px;">
+            <td class="service">Mantención Redes</td>
+            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="unit">$<?php echo $costopersonalti?></td>
+            <td class="qty">4</td>
+            <td class="total">$160.00</td>
+          </tr>
+          <tr style="font-size:12px;">
+            <td colspan="4">TOTAL USD</td>
             <td class="total">$5,200.00</td>
           </tr>
-          <tr>
-            <td colspan="4">TAX 25%</td>
-            <td class="total">$1,300.00</td>
-          </tr>
-          <tr>
-            <td colspan="4" class="grand total">GRAND TOTAL</td>
+          <tr style="font-size:12px;">
+            <td colspan="4" class="grand total">TOTAL CLP</td>
             <td class="grand total">$6,500.00</td>
           </tr>
         </tbody>
@@ -166,6 +186,69 @@ $filter = [
         <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
       </div>
     </main>
+
+    <h1>Cloud | <?php echo $nombreservidor ?></h1>
+
+<table>
+  <thead>
+  <tr style="font-size:14px;">
+      <th class="service">SERVICE</th>
+      <th class="desc">DESCRIPTION</th>
+      <th>USD</th>
+      <th>CLP</th>
+      <th>TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr style="font-size:13px;">
+      <td class="service">Producto Cloud</td>
+      <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
+      <td class="unit">$40.00</td>
+      <td class="qty">26</td>
+      <td class="total">$1,040.00</td>
+    </tr>
+    <tr style="font-size:13px;">
+      <td class="service">Personal Cloud</td>
+      <td class="desc">Developing a Content Management System-based Website</td>
+      <td class="unit">$40.00</td>
+      <td class="qty">80</td>
+      <td class="total">$3,200.00</td>
+    </tr>
+    <tr style="font-size:13px;">
+      <td class="service">Almacenamiento Cloud</td>
+      <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+      <td class="unit">$40.00</td>
+      <td class="qty">4</td>
+      <td class="total">$160.00</td>
+    </tr>
+    <tr style="font-size:13px;">
+      <td class="service">Red Cloud</td>
+      <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+      <td class="unit">$40.00</td>
+      <td class="qty">4</td>
+      <td class="total">$160.00</td>
+    </tr>
+    <tr style="font-size:13px;">
+            <td colspan="4">TOTAL USD</td>
+            <td class="total">$5,200.00</td>
+          </tr>
+          <tr style="font-size:13px;">
+            <td colspan="4" class="grand total">TOTAL CLP</td>
+            <td class="grand total">$6,500.00</td>
+          </tr>
+  </tbody>
+</table>
+<div id="notices">
+  <div>NOTICE:</div>
+  <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+</div>
+</main>
+
+
+
+
+
+
     <footer>
       Invoice was created on a computer and is valid without the signature and seal.
     </footer>
