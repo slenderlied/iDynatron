@@ -208,139 +208,20 @@ $filter = [
 	<!-- end sidebar -->
 	<!-- main content -->
 	<div class="wrapper">
+
 		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-primary">
-					<p>
-						<i class="fas fa-tasks"></i>
-					</p>
-					<h3>100+</h3>
-					<p>To do</p>
-				</div>
-			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
-					<p>
-						<i class="fas fa-spinner"></i>
-					</p>
-					<h3>100+</h3>
-					<p>In progress</p>
-				</div>
-			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fas fa-check-circle"></i>
-					</p>
-					<h3>100+</h3>
-					<p>Completed</p>
-				</div>
-			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-danger">
-					<p>
-						<i class="fas fa-bug"></i>
-					</p>
-					<h3>100+</h3>
-					<p>Issues</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-8 col-m-12 col-sm-12">
+		<div class="col-4 col-m-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Table
+							Gráfico de Barra
 						</h3>
 						<i class="fas fa-ellipsis-h"></i>
 					</div>
 					<div class="card-content">
-						<table>
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Project</th>
-									<th>Manager</th>
-									<th>Status</th>
-									<th>Due date</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>React</td>
-									<td>Tran Anh Tuat</td>
-									<td>
-										<span class="dot">
-											<i class="bg-success"></i>
-											Completed
-										</span>
-									</td>
-									<td>17/07/2020</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Vue</td>
-									<td>Bui Nhu Sang</td>
-									<td>
-										<span class="dot">
-											<i class="bg-warning"></i>
-											In progress
-										</span>
-									</td>
-									<td>18/07/2020</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Laravel</td>
-									<td>Phan Nhat Truong</td>
-									<td>
-										<span class="dot">
-											<i class="bg-warning"></i>
-											In progress
-										</span>
-									</td>
-									<td>17/07/2020</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Django</td>
-									<td>Le Anh Tuan</td>
-									<td>
-										<span class="dot">
-											<i class="bg-danger"></i>
-											Delayed
-										</span>
-									</td>
-									<td>07/07/2020</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>MEAN</td>
-									<td>John Evan</td>
-									<td>
-										<span class="dot">
-											<i class="bg-primary"></i>
-											Pending
-										</span>
-									</td>
-									<td>20/08/2020</td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>MERN</td>
-									<td>Robert</td>
-									<td>
-										<span class="dot">
-											<i class="bg-primary"></i>
-											Pending
-										</span>
-									</td>
-									<td>20/08/2020</td>
-								</tr>
-							</tbody>
-						</table>
+					<div class="progress-wrapper">
+					<canvas id="myChart1" ></canvas>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -348,46 +229,28 @@ $filter = [
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Progress bar
+							Gráfico Circular
 						</h3>
 						<i class="fas fa-ellipsis-h"></i>
 					</div>
 					<div class="card-content">
 						<div class="progress-wrapper">
-							<p>
-								Less than 1 hour
-								<span class="float-right">50%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-success" style="width: 50%"></div>
-							</div>
+						<canvas id="myChart2"></canvas>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+							Gráfico de Rosquilla
+						</h3>
+						<i class="fas fa-ellipsis-h"></i>
+					</div>
+					<div class="card-content">
 						<div class="progress-wrapper">
-							<p>
-								1 - 3 hours
-								<span class="float-right">60%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-primary" style="width:60%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								More than 3 hours
-								<span class="float-right">40%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-warning" style="width:40%"></div>
-							</div>
-						</div>
-						<div class="progress-wrapper">
-							<p>
-								More than 6 hours
-								<span class="float-right">20%</span>
-							</p>
-							<div class="progress">
-								<div class="bg-danger" style="width:20%"></div>
-							</div>
+						<canvas id="myChart3"></canvas>
 						</div>
 					</div>
 				</div>
@@ -398,7 +261,7 @@ $filter = [
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Servidor <?php echo $nombreservidor ?>
+						Gráfico de Línea Doble Servidor <?php echo $nombreservidor ?>
 						</h3>
 					</div>
 					<div class="card-content">
@@ -416,8 +279,8 @@ $filter = [
 
 	<script>
 var ctx = document.getElementById('myChart');
-ctx.height = 500
-ctx.width = 500
+ctx.height = 350
+ctx.width = 350
 var data = {
 	labels: ['Primer Año', 'Segundo Año', 'Tercer Año', 'Cuarto Año', 'Quinto Año'],
 	datasets: [{
@@ -444,10 +307,187 @@ var lineChart = new Chart(ctx, {
 		maintainAspectRatio: false,
 		bezierCurve: false,
 	}
-})
+});
 
+
+var ctx = document.getElementById('myChart1').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['On-Premise', 'Cloud'],
+        datasets: [{
+            label: '# of Votes',
+            data: [<?php echo $clpsumtotmes?>, <?php echo $clpsumcloud?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options
+});
+// And for a doughnut chart
+var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+    options: options
+});
 
     </script>
+
+<script>
+
+var ctx = document.getElementById('myChart2').getContext('2d');
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Pimer Año', 'Segundo Año', 'Tercer Año', 'Cuarto Año', 'Quinto Año'],
+        datasets: [{
+            label: '# of Votes',
+            data: [ <?php echo $clpsumtotmes*12?>,<?php echo $clpsumtotmes*24?>, <?php echo $clpsumtotmes*36?>, <?php echo $clpsumtotmes*48?>, <?php echo $clpsumtotmes*60?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }, {
+            label: 'On-Premise',
+            data: [<?php echo $clpsumcloud*12?>, <?php echo $clpsumcloud*24?>, <?php echo $clpsumcloud*36?>, <?php echo $clpsumcloud*48?>, <?php echo $clpsumcloud*60?>],
+            backgroundColor: [
+				'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 99, 132, 0.2)',  
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+				'rgba(255, 206, 86, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+				'rgba(54, 162, 235, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+				'rgba(255, 206, 86, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+</script>
+
+
+<script>
+var ctx = document.getElementById('myChart3').getContext('2d');
+
+var myChart = new Chart(ctx, {
+	type: 'doughnut',
+    data: {
+        labels: ['Primer Año', 'Segundo Año', 'Tercer Año', 'Cuarto Año', 'Quinto Año'],
+        datasets: [{
+            label: 'On-Premise',
+			data: [ <?php echo $clpsumtotmes*12?>,<?php echo $clpsumtotmes*24?>, <?php echo $clpsumtotmes*36?>, <?php echo $clpsumtotmes*48?>, <?php echo $clpsumtotmes*60?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }, {
+            label: 'Cloud',
+            data: [<?php echo $clpsumcloud*12?>, <?php echo $clpsumcloud*24?>, <?php echo $clpsumcloud*36?>, <?php echo $clpsumcloud*48?>, <?php echo $clpsumcloud*60?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
 
 </body>
 </html>

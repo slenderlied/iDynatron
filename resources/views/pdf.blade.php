@@ -61,7 +61,7 @@ $filter = [
   $clphardpremi = $hardpremi * $dolar;
   $clpelecpremi = $elecpremi * $dolar;
   $clpsoftpremi = $softpremi * $dolar;
-  $clredepremi = $redepremi * $dolar;
+  $clpredepremi = $redepremi * $dolar;
   $clpmanteremi = $manteremi * $dolar;
   //--\\
   //Cloud\\
@@ -121,8 +121,8 @@ $filter = [
       <table>
         <thead>
           <tr style="font-size:13px;">
-            <th class="service">SERVICE</th>
-            <th class="desc">DESCRIPTION</th>
+            <th class="service">SERVICIO</th>
+            <th class="desc">DESCRIPCIÓN</th>
             <th>USD</th>
             <th>CLP</th>
             <th>TOTAL</th>
@@ -146,54 +146,50 @@ $filter = [
           <tr style="font-size:12px;">
             <td class="service">Software</td>
             <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
-            <td class="unit">$<?php echo $costopersonalti?></td>
-            <td class="qty">4</td>
-            <td class="total">$160.00</td>
+            <td class="unit">$<?php echo $softpremi?></td>
+            <td class="qty">$<?php echo number_format($clpsoftpremi, 0, ",", ".");?></td>
+            <td class="total">$<?php echo number_format($clpsoftpremi, 0, ",", ".");?></td>
           </tr>
           <tr style="font-size:12px;">
             <td class="service">Electricidad</td>
             <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
-            <td class="unit">$<?php echo $costopersonalti?></td>
-            <td class="qty">4</td>
-            <td class="total">$160.00</td>
+            <td class="unit">$<?php echo $elecpremi?></td>
+            <td class="qty">$<?php echo number_format($clpelecpremi, 0, ",", ".");?></td>
+            <td class="total">$<?php echo number_format($clpelecpremi, 0, ",", ".");?></td>
           </tr>
           <tr style="font-size:12px;">
             <td class="service">Redes</td>
             <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
-            <td class="unit">$<?php echo $costopersonalti?></td>
-            <td class="qty">4</td>
-            <td class="total">$160.00</td>
+            <td class="unit">$<?php echo $redepremi?></td>
+            <td class="qty">$<?php echo number_format($clpredepremi, 0, ",", ".");?></td>
+            <td class="total">$<?php echo number_format($clpredepremi, 0, ",", ".");?></td>
           </tr>
           <tr style="font-size:12px;">
             <td class="service">Mantención Redes</td>
             <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
-            <td class="unit">$<?php echo $costopersonalti?></td>
-            <td class="qty">4</td>
-            <td class="total">$160.00</td>
-          </tr>
-          <tr style="font-size:12px;">
-            <td colspan="4">TOTAL USD</td>
-            <td class="total">$5,200.00</td>
+            <td class="unit">$<?php echo $manteremi?></td>
+            <td class="qty">$<?php echo number_format($clpmanteremi, 0, ",", ".");?></td>
+            <td class="total">$<?php echo number_format($clpmanteremi, 0, ",", ".");?></td>
           </tr>
           <tr style="font-size:12px;">
             <td colspan="4" class="grand total">TOTAL CLP</td>
-            <td class="grand total">$6,500.00</td>
+            <td class="grand total">$<?php echo number_format($clpsumtotmes, 0, ",", ".");?></td>
           </tr>
         </tbody>
       </table>
       <div id="notices">
-        <div>NOTICE:</div>
-        <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+        <div>NOTA:</div>
+        <div class="notice">Todos los precios están sujetos a cambios debido a las especificaciones, cantidades, costos, recursos humanos disponibles de cada usuario o empresa.</div>
       </div>
     </main>
-
+<br><br>
     <h1>Cloud | <?php echo $nombreservidor ?></h1>
 
 <table>
   <thead>
   <tr style="font-size:14px;">
-      <th class="service">SERVICE</th>
-      <th class="desc">DESCRIPTION</th>
+  <th class="service">SERVICIO</th>
+  <th class="desc">DESCRIPCIÓN</th>
       <th>USD</th>
       <th>CLP</th>
       <th>TOTAL</th>
@@ -203,44 +199,41 @@ $filter = [
   <tr style="font-size:13px;">
       <td class="service">Producto Cloud</td>
       <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
-      <td class="unit">$40.00</td>
-      <td class="qty">26</td>
-      <td class="total">$1,040.00</td>
+      <td class="unit">$<?php echo $cloudproducto?></td>
+      <td class="qty">$<?php echo number_format($clpcloudproducto, 0, ",", ".");?></td>
+      <td class="total">$<?php echo number_format($clpcloudproducto, 0, ",", ".");?></td>
     </tr>
     <tr style="font-size:13px;">
       <td class="service">Personal Cloud</td>
       <td class="desc">Developing a Content Management System-based Website</td>
-      <td class="unit">$40.00</td>
-      <td class="qty">80</td>
-      <td class="total">$3,200.00</td>
+      <td class="unit">$<?php echo $costopersonalcloud?></td>
+      <td class="qty">$<?php echo number_format($clpcostopersonalcloud, 0, ",", ".");?></td>
+      <td class="total">$<?php echo number_format($clpcostopersonalcloud, 0, ",", ".");?></td>
     </tr>
     <tr style="font-size:13px;">
       <td class="service">Almacenamiento Cloud</td>
       <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
-      <td class="unit">$40.00</td>
-      <td class="qty">4</td>
-      <td class="total">$160.00</td>
+      <td class="unit">$<?php echo $precioalmacenamiento?></td>
+      <td class="qty">$<?php echo number_format($clpprecioalmacenamiento, 0, ",", ".");?></td>
+      <td class="total">$<?php echo number_format($clpprecioalmacenamiento, 0, ",", ".");?></td>
     </tr>
     <tr style="font-size:13px;">
       <td class="service">Red Cloud</td>
       <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
-      <td class="unit">$40.00</td>
-      <td class="qty">4</td>
-      <td class="total">$160.00</td>
+      <td class="unit">$<?php echo $precioredalmacenamiento?></td>
+      <td class="qty">$<?php echo number_format($clpprecioredalmacenamiento, 0, ",", ".");?></td>
+      <td class="total">$<?php echo number_format($clpprecioredalmacenamiento, 0, ",", ".");?></td>
     </tr>
-    <tr style="font-size:13px;">
-            <td colspan="4">TOTAL USD</td>
-            <td class="total">$5,200.00</td>
-          </tr>
+
           <tr style="font-size:13px;">
-            <td colspan="4" class="grand total">TOTAL CLP</td>
-            <td class="grand total">$6,500.00</td>
+            <td colspan="4" class="grand total">TOTAL</td>
+            <td class="grand total">$<?php echo number_format($clpsumcloud, 0, ",", ".");?></td>
           </tr>
   </tbody>
 </table>
 <div id="notices">
-  <div>NOTICE:</div>
-  <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+  <div>NOTA:</div>
+  <div class="notice">Todos los precios están sujetos a cambios debido a las especificaciones, cantidades, costos, recursos humanos disponibles de cada usuario o empresa.</div>
 </div>
 </main>
 
@@ -250,7 +243,7 @@ $filter = [
 
 
     <footer>
-      Invoice was created on a computer and is valid without the signature and seal.
+      DynaCloud
     </footer>
   </body>
 </html>
