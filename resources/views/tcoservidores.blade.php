@@ -52,9 +52,9 @@ $cursor = $manager->executeQuery($dbname4, $query);
 				<div class="col-md-12 text-center">
                 <h1></h1>
 					<ul class="ftco-footer-social p-0">
-						<li class="ftco-animate"><a href="menu"><span class="icon-home"></span></a></li>
+						<li class="ftco-animate"><a href="menuprincipal"><span class="icon-home"></span></a></li>
                         <li class="ftco-animate"><a href="perfilusuario"><span class="icon-user-circle"></span></a></li>
-						<li class="ftco-animate"><a href="#"><span class="fas fa-sign-out-alt"></span></a></li>
+						<li class="ftco-animate"><a href="../php/logout.php"><span class="fas fa-sign-out-alt"></span></a></li>
 					</ul>
 				</div>
 			</div>

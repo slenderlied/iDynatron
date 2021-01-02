@@ -66,8 +66,8 @@ $filter = [
 				<div class="col-md-12 text-center">
                 <h1></h1>
 					<ul class="ftco-footer-social p-0">
-						<li class="ftco-animate"><a href="menu"><span class="icon-home"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="fas fa-sign-out-alt"></span></a></li>
+						<li class="ftco-animate"><a href="menuprincipal"><span class="icon-home"></span></a></li>
+                        <li class="ftco-animate"><a href="../php/logout.php"><span class="fas fa-sign-out-alt"></span></a></li>
 					</ul>
 					
 				</div>
@@ -151,7 +151,7 @@ $filter = [
 					<form action="#" class="contact-form p-4 p-md-5 py-md-5">
                     <div class="form-group">
 					<p style="font-size: 10px;"  ></p>	
-                    <h2 class="mb-4 text-center"><a href="/mejorarcuenta">Mejorar Cuenta</a> </h2>
+                    <h2 class="mb-4 text-center"><a href="/mejorarcuenta">Hazte Premium</a> </h2>
 					</div>
 						
 					</form>
