@@ -199,7 +199,7 @@ $filter = [
 						<i class="fas fa-tachometer-alt"></i>
 					</div>
 					<span>
-						Dashboard
+						Dashboard <?php echo $nombreservidor ?>
 					</span>
 				</a>
 			
@@ -214,7 +214,7 @@ $filter = [
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Gráfico de Barra
+							Gráfico de Barra <?php echo $nombreservidor ?>
 						</h3>
 						<i class="fas fa-ellipsis-h"></i>
 					</div>
@@ -229,7 +229,7 @@ $filter = [
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Gráfico Circular
+							Gráfico Circular <?php echo $nombreservidor ?>
 						</h3>
 						<i class="fas fa-ellipsis-h"></i>
 					</div>
@@ -244,7 +244,7 @@ $filter = [
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Gráfico de Rosquilla
+							Gráfico de Rosquilla <?php echo $nombreservidor ?>
 						</h3>
 						<i class="fas fa-ellipsis-h"></i>
 					</div>
@@ -261,7 +261,7 @@ $filter = [
 				<div class="card">
 					<div class="card-header">
 						<h3>
-						Gráfico de Línea Doble Servidor <?php echo $nombreservidor ?>
+						Gráfico de Radar <?php echo $nombreservidor ?>
 						</h3>
 					</div>
 					<div class="card-content">
@@ -319,16 +319,16 @@ var myChart = new Chart(ctx, {
             label: '# of Votes',
             data: [<?php echo $clpsumtotmes?>, <?php echo $clpsumcloud?>],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132,0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235,1)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
@@ -372,15 +372,15 @@ var myChart = new Chart(ctx, {
     data: {
         labels: ['Pimer Año', 'Segundo Año', 'Tercer Año', 'Cuarto Año', 'Quinto Año'],
         datasets: [{
-            label: '# of Votes',
+            label: 'On-Premise',
             data: [ <?php echo $clpsumtotmes*12?>,<?php echo $clpsumtotmes*24?>, <?php echo $clpsumtotmes*36?>, <?php echo $clpsumtotmes*48?>, <?php echo $clpsumtotmes*60?>],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -392,15 +392,15 @@ var myChart = new Chart(ctx, {
             ],
             borderWidth: 1
         }, {
-            label: 'On-Premise',
+            label: 'Cloud',
             data: [<?php echo $clpsumcloud*12?>, <?php echo $clpsumcloud*24?>, <?php echo $clpsumcloud*36?>, <?php echo $clpsumcloud*48?>, <?php echo $clpsumcloud*60?>],
             backgroundColor: [
-				'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 99, 132, 0.2)',  
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-				'rgba(255, 206, 86, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+				'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 99, 132, 0.8)',  
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+				'rgba(255, 206, 86, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
             ],
             borderColor: [
 				'rgba(54, 162, 235, 1)',
@@ -432,19 +432,19 @@ var myChart = new Chart(ctx, {
 var ctx = document.getElementById('myChart3').getContext('2d');
 
 var myChart = new Chart(ctx, {
-	type: 'doughnut',
+	type: 'radar',
     data: {
         labels: ['Primer Año', 'Segundo Año', 'Tercer Año', 'Cuarto Año', 'Quinto Año'],
         datasets: [{
             label: 'On-Premise',
 			data: [ <?php echo $clpsumtotmes*12?>,<?php echo $clpsumtotmes*24?>, <?php echo $clpsumtotmes*36?>, <?php echo $clpsumtotmes*48?>, <?php echo $clpsumtotmes*60?>],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(75, 192, 192, 0.4)',
+                'rgba(153, 102, 255, 0.4)',
+                'rgba(255, 159, 64, 0.4)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -459,16 +459,16 @@ var myChart = new Chart(ctx, {
             label: 'Cloud',
             data: [<?php echo $clpsumcloud*12?>, <?php echo $clpsumcloud*24?>, <?php echo $clpsumcloud*36?>, <?php echo $clpsumcloud*48?>, <?php echo $clpsumcloud*60?>],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+				'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
             ],
             borderColor: [
+				'rgba(54, 162, 235, 1)',
                 'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',

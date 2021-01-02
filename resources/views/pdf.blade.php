@@ -131,48 +131,48 @@ $filter = [
         <tbody>
           <tr style="font-size:12px;">
             <td class="service">Personal TI</td>
-            <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
+            <td class="desc">Profesional encargado de dar soporte a todas las comunicaciones de la empresa e instalación y actualización de diferentes softwares, equipos y reparación de ellos.</td>
             <td class="unit">$<?php echo $costopersonalti?></td>
             <td class="qty">$<?php echo number_format($clpcostopersonalti, 0, ",", ".");  ?></td>
             <td class="total">$<?php echo number_format($clpcostopersonalti, 0, ",", ".");  ?></td>
           </tr>
           <tr style="font-size:12px;">
             <td class="service">Hardware</td>
-            <td class="desc">Developing a Content Management System-based Website</td>
+            <td class="desc">Conjunto de elementos físicos que constituyen una computadora o un sistema informático.</td>
             <td class="unit">$<?php echo $hardpremi?></td>
             <td class="qty">$<?php echo number_format($clphardpremi, 0, ",", ".");  ?></td>
             <td class="total">$<?php echo number_format($clphardpremi, 0, ",", ".");  ?></td>
           </tr>
           <tr style="font-size:12px;">
             <td class="service">Software</td>
-            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="desc">Conjunto de programas y rutinas que permiten a la computadora realizar determinadas tareas.</td>
             <td class="unit">$<?php echo $softpremi?></td>
             <td class="qty">$<?php echo number_format($clpsoftpremi, 0, ",", ".");?></td>
             <td class="total">$<?php echo number_format($clpsoftpremi, 0, ",", ".");?></td>
           </tr>
           <tr style="font-size:12px;">
             <td class="service">Electricidad</td>
-            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="desc">Cantidad de energía utilizada.</td>
             <td class="unit">$<?php echo $elecpremi?></td>
             <td class="qty">$<?php echo number_format($clpelecpremi, 0, ",", ".");?></td>
             <td class="total">$<?php echo number_format($clpelecpremi, 0, ",", ".");?></td>
           </tr>
           <tr style="font-size:12px;">
             <td class="service">Redes</td>
-            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="desc">Las redes mantienen la comunicación y operación, tanto de manera interna como externa.</td>
             <td class="unit">$<?php echo $redepremi?></td>
             <td class="qty">$<?php echo number_format($clpredepremi, 0, ",", ".");?></td>
             <td class="total">$<?php echo number_format($clpredepremi, 0, ",", ".");?></td>
           </tr>
           <tr style="font-size:12px;">
             <td class="service">Mantención Redes</td>
-            <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+            <td class="desc">Un Mantenimiento de redes preventivo permite solucionar cualquier problema antes de que suceda y optimizar los recursos de los que dispones.</td>
             <td class="unit">$<?php echo $manteremi?></td>
             <td class="qty">$<?php echo number_format($clpmanteremi, 0, ",", ".");?></td>
             <td class="total">$<?php echo number_format($clpmanteremi, 0, ",", ".");?></td>
           </tr>
           <tr style="font-size:12px;">
-            <td colspan="4" class="grand total">TOTAL CLP</td>
+            <td colspan="4" class="grand total">TOTAL ON-PREMISE</td>
             <td class="grand total">$<?php echo number_format($clpsumtotmes, 0, ",", ".");?></td>
           </tr>
         </tbody>
@@ -182,7 +182,7 @@ $filter = [
         <div class="notice">Todos los precios están sujetos a cambios debido a las especificaciones, cantidades, costos, recursos humanos disponibles de cada usuario o empresa.</div>
       </div>
     </main>
-<br><br>
+
     <h1>Cloud | <?php echo $nombreservidor ?></h1>
 
 <table>
@@ -196,37 +196,37 @@ $filter = [
     </tr>
   </thead>
   <tbody>
-  <tr style="font-size:13px;">
+  <tr style="font-size:12px;">
       <td class="service">Producto Cloud</td>
-      <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
+      <td class="desc"> Acceso remoto a softwares, almacenamiento de archivos y procesamiento de datos por medio de Internet.</td>
       <td class="unit">$<?php echo $cloudproducto?></td>
       <td class="qty">$<?php echo number_format($clpcloudproducto, 0, ",", ".");?></td>
       <td class="total">$<?php echo number_format($clpcloudproducto, 0, ",", ".");?></td>
     </tr>
-    <tr style="font-size:13px;">
+    <tr style="font-size:12px;">
       <td class="service">Personal Cloud</td>
-      <td class="desc">Developing a Content Management System-based Website</td>
+      <td class="desc">Nube personal es una colección de contenido y servicios digitales a los que se puede acceder desde cualquier dispositivo.</td>
       <td class="unit">$<?php echo $costopersonalcloud?></td>
       <td class="qty">$<?php echo number_format($clpcostopersonalcloud, 0, ",", ".");?></td>
       <td class="total">$<?php echo number_format($clpcostopersonalcloud, 0, ",", ".");?></td>
     </tr>
-    <tr style="font-size:13px;">
+    <tr style="font-size:12px;">
       <td class="service">Almacenamiento Cloud</td>
-      <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+      <td class="desc">Modelo de almacenamiento de datos basado en redes de computadoras</td>
       <td class="unit">$<?php echo $precioalmacenamiento?></td>
       <td class="qty">$<?php echo number_format($clpprecioalmacenamiento, 0, ",", ".");?></td>
       <td class="total">$<?php echo number_format($clpprecioalmacenamiento, 0, ",", ".");?></td>
     </tr>
-    <tr style="font-size:13px;">
+    <tr style="font-size:12px;">
       <td class="service">Red Cloud</td>
-      <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+      <td class="desc">Red de servidores conectados, propiedad de un que también los explota, y a través de la cual una organización puede distribuir contenido digital a usuarios finales.</td>
       <td class="unit">$<?php echo $precioredalmacenamiento?></td>
       <td class="qty">$<?php echo number_format($clpprecioredalmacenamiento, 0, ",", ".");?></td>
       <td class="total">$<?php echo number_format($clpprecioredalmacenamiento, 0, ",", ".");?></td>
     </tr>
 
-          <tr style="font-size:13px;">
-            <td colspan="4" class="grand total">TOTAL</td>
+          <tr style="font-size:12px;">
+            <td colspan="4" class="grand total">TOTAL CLOUD</td>
             <td class="grand total">$<?php echo number_format($clpsumcloud, 0, ",", ".");?></td>
           </tr>
   </tbody>
