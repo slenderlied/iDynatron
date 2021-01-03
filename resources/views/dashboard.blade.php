@@ -244,7 +244,7 @@ $filter = [
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Gráfico de Rosquilla <?php echo $nombreservidor ?>
+							Gráfico de Radar <?php echo $nombreservidor ?>
 						</h3>
 						<i class="fas fa-ellipsis-h"></i>
 					</div>
@@ -261,7 +261,7 @@ $filter = [
 				<div class="card">
 					<div class="card-header">
 						<h3>
-						Gráfico de Radar <?php echo $nombreservidor ?>
+						Gráfico Lineal <?php echo $nombreservidor ?>
 						</h3>
 					</div>
 					<div class="card-content">
